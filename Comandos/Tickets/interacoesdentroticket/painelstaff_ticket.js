@@ -4,7 +4,7 @@ module.exports = {
   prototype: "button",
   code: `
   $interactionReply[**Olá <@$authorid>! A partir do botão abaixo, você pode notificar o Membro que você está atendendo.**
-  {actionRow: {button:Notificar Membro:primary:notificarmembro_ticket::📨}{button:Renomear Ticket:success:renomear_ticket::🖌}};;true]
+  {actionRow: {button:Notificar Membro:primary:notificarmembro_ticket::📨}{button:Renomear Ticket:success:renomear_ticket:true:🖌}};;true]
   $onlyif[$authorid!=$getChannelVar[solicitou_ticket];]
   `
 }

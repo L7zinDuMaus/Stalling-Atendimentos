@@ -23,14 +23,14 @@ client.status({
 });
 
 client.status({
-    name: "Sempre ONLINE!",
+    name: "discord.gg/tbVCcz3b4g",
     type: "STREAMING",
     time: 10,
     url: "https://www.twitch.tv/sabrina"
 });
 
 client.status({
-    name: "A Melhor!", // Normal status like any other Discord user without any state.
+    name: "by Capital Solutions", // Normal status like any other Discord user without any state.
     time: 10,
     type: "STREAMING",
     url: "https://www.twitch.tv/sabrina",
