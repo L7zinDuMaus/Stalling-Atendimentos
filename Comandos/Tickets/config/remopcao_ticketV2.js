@@ -4,7 +4,7 @@ module.exports = {
   prototype: "selectMenu",
   code: `
   $interactionfollowUp[☑️ **| Opção Removida com Sucesso.**;true]
-  $interactionedit[**Utilize o Menu abaixo para remover Opções do Menu de Seleção do Painel de Tickets.**
+  $interactionupdate[**Utilize o Menu abaixo para remover Opções do Menu de Seleção do Painel de Tickets.**
   
   {actionRow: {button:Voltar para Menu de Opções:danger:gerenciaropcoes_ticket::🔙}}
  $nonescape[$get[menu2]]]

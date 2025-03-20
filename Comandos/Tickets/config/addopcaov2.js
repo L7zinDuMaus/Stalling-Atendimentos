@@ -4,6 +4,7 @@ module.exports = {
   prototype: "modal",
   $if: "old",
   code: `
+  $interactionfollowUp[**☑️ | Opção de Atendimento Adicionada com Sucesso.**;true]
   $if[1==1]
   $interactionupdate[**Utilize os Botões abaixo para adicionar e remover opções do Menu de Seleção do Painel de Tickets.** 
   {newEmbed: {title:Opções Criadas} {color:$getGuildVar[color_ticket]} {footer:$guildname | Todos os Direitos Reservados}{author:$guildname | Atendimentos}{thumbnail:$guildicon}
@@ -19,7 +20,7 @@ module.exports = {
   {field:5. $getGuildVar[emoji5] | $getGuildVar[titulo5]:$getGuildVar[desc5]}
  $endif }
   {actionRow:{button:Adicionar Opção:success:addopcao_ticket:$if[$getGuildVar[titulo5]==$getvar[titulo5]]true$endif:}{button:Remover Opção:danger:remopcao_ticket::}{button:Voltar para Menu:secondary:voltarconfig::🔙}}]
-  $endif
+  $end
 
   $if[$getGuildVar[titulo1]==]
   $setGuildVar[titulo1;$get[titulo]] 
