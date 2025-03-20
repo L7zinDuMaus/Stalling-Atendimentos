@@ -1,5 +1,5 @@
 module.exports = {
-  name: "variaveistextostickets",
+  name: "variaveistextos_tickets",
   type: "interaction",
   prototype: "button",
   code: `
