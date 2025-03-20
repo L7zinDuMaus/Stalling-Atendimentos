@@ -6,7 +6,7 @@ module.exports = {
   
   $interactionupdate[**Utilize o Menu abaixo para remover opções do Menu de Seleção do Painel de Tickets.**
   
-  {newEmbed: {title:Opções Criadas} {color:$getGuildVar[color_ticket]} {footer:$guildname | Todos os Direitos Reservados}{author:$guildname | Atendimentos}{thumbnail:$guildicon} $if[$getGuildVar[titulo1]!=;{field:1. $getGuildVar[emoji1] | $getGuildVar[titulo1]:$getGuildVar[desc1]}] $if[$getGuildVar[titulo2]!=;{field:2. $getGuildVar[emoji2] | $getGuildVar[titulo2]:$getGuildVar[desc2]}] $if[$getGuildVar[titulo3]!=;{field:3. $getGuildVar[emoji3] | $getGuildVar[titulo3]:$getGuildVar[desc3]}] $if[$getGuildVar[titulo4]!=;{field:4. $getGuildVar[emoji4] | $getGuildVar[titulo4]:$getGuildVar[desc4]}] $if[$getGuildVar[titulo5]!=;{field:5. $getGuildVar[emoji5] | $getGuildVar[titulo5]:$getGuildVar[desc5]}]}
+  {newEmbed: {title:Opções Criadas} {color:$getGuildVar[color_ticket]} {footer:$guildname | Todos os Direitos Reservados}{author:$guildname | Atendimentos}{thumbnail:$guildicon} {field:$if[$getGuildVar[titulo1]!=;1. $getGuildVar[emoji1] | $getGuildVar[titulo1]:$getGuildVar[desc1]]} {field:$if[$getGuildVar[titulo2]!=;2. $getGuildVar[emoji2] | $getGuildVar[titulo2]:$getGuildVar[desc2]]} {field:$if[$getGuildVar[titulo3]!=;3. $getGuildVar[emoji3] | $getGuildVar[titulo3]:$getGuildVar[desc3]]} {field:$if[$getGuildVar[titulo4]!=;4. $getGuildVar[emoji4] | $getGuildVar[titulo4]:$getGuildVar[desc4]]} {field:$if[$getGuildVar[titulo5]!=;5. $getGuildVar[emoji5] | $getGuildVar[titulo5]:$getGuildVar[desc5]]}}
   
   {actionRow: {button:Voltar para Menu de Opções:danger:gerenciaropcoes_ticket::🔙}}
  $nonescape[$get[menu2]]]
