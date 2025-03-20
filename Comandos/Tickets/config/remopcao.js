@@ -4,9 +4,7 @@ module.exports = {
   prototype: "button",
   code: `
   
-  $interactionupdate[**Utilize o Menu abaixo para remover opções do Menu de Seleção do Painel de Tickets.**
-  
-  {newEmbed: {title:Opções Criadas} {color:$getGuildVar[color_ticket]} {footer:$guildname | Todos os Direitos Reservados}{author:$guildname | Atendimentos}{thumbnail:$guildicon} {field:$if[$getGuildVar[titulo1]!=;1. $getGuildVar[emoji1] | $getGuildVar[titulo1]:$getGuildVar[desc1];Indefinido]} {field:$if[$getGuildVar[titulo2]!=;2. $getGuildVar[emoji2] | $getGuildVar[titulo2]:$getGuildVar[desc2];Indefinido]} {field:$if[$getGuildVar[titulo3]!=;3. $getGuildVar[emoji3] | $getGuildVar[titulo3]:$getGuildVar[desc3];Indefinido]} {field:$if[$getGuildVar[titulo4]!=;4. $getGuildVar[emoji4] | $getGuildVar[titulo4]:$getGuildVar[desc4];Indefinido]} {field:$if[$getGuildVar[titulo5]!=;5. $getGuildVar[emoji5] | $getGuildVar[titulo5]:$getGuildVar[desc5];Indefinido]}}
+  $interactionupdate[**Utilize o Menu abaixo para remover Opções do Menu de Seleção do Painel de Tickets.**
   
   {actionRow: {button:Voltar para Menu de Opções:danger:gerenciaropcoes_ticket::🔙}}
  $nonescape[$get[menu2]]]

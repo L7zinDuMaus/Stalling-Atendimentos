@@ -3,7 +3,6 @@ module.exports = {
   type: "interaction",
   prototype: "selectMenu",
   code: `
-  
   $setChannelVar[abertura_ticket;$truncate[$divide[$dateStamp;1000]];$get[idtopicoticket]]
   $setchannelvar[solicitou_ticket;$authorid;$get[idtopicoticket]]
   $interactionReply[O seu Ticket foi aberto com sucesso em $messageurl[$channelsendmessage[$get[idtopicoticket];<@$authorid>$if[$getGuildVar[cargo_ticket]!=; | <@&$getguildvar[cargo_ticket]>]. {newEmbed: {footer:$guildname | Todos os Direitos Reservados} {thumbnail:$guildicon}{author:$guildname | Atendimentos}{title:$getguildvar[titulo_b_ticket]}{description:$replaceText[$replaceText[$replaceText[$replaceText[$getguildvar[descricao_b_ticket];|EMOJI|;$getChannelVar[emoji_ticket;$get[idtopicoticket]]];|ATENDENTE|;Ticket ainda não Assumido];|USUARIO|;<@$authorid>];|CATEGORIA|;$touppercase[$getChannelVar[categoria_ticket;$get[idtopicoticket]]]]}{color:$getGuildVar[color_ticket]}{footer:$getGuildVar[footer_ticket]}}{actionRow:
