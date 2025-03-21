@@ -19,7 +19,7 @@ module.exports = {
   $endif $if[$getGuildVar[titulo5]!=]
   {field:5. $getGuildVar[emoji5] | $getGuildVar[titulo5]:$getGuildVar[desc5]}
  $endif }
-  {actionRow:{button:Adicionar Opção:success:addopcao_ticket:$if[$getGuildVar[titulo5]==$getvar[titulo5]]true$endif:}{button:Remover Opção:danger:remopcao_ticket::}{button:Voltar para Menu:secondary:voltarconfig::🔙}} $end ]
+  {actionRow:{button:Adicionar Opção:success:addopcao_ticket:$if[$getGuildVar[titulo5]==$getvar[titulo5]]true$endif:}{button:Remover Opção:danger:remopcao_ticket::}{button:Voltar para Menu:secondary:voltarconfig::🔙}} ]$endif
 
   $if[$getGuildVar[titulo1]==]
   $setGuildVar[titulo1;$get[titulo]] 

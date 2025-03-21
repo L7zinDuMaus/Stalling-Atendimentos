@@ -14,7 +14,7 @@ module.exports = {
  $resetguildvar[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$nonescape[$getSelectMenuValues[all;,]];opcao1;titulo1];opcao2;titulo2];opcao3;titulo3];opcao4;titulo4];opcao5;titulo5]]
  $resetguildvar[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$nonescape[$getSelectMenuValues[all;,]];opcao1;emoji1];opcao2;emoji2];opcao3;emoji3];opcao4;emoji4];opcao5;emoji5]]
  $resetguildvar[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$nonescape[$getSelectMenuValues[all;,]];opcao1;desc1];opcao2;desc2];opcao3;desc3];opcao4;desc4];opcao5;desc5]]
-  
+  $onlyif[$getGuildVar[titulo1]$getGuildVar[titulo2]$getGuildVar[titulo3]$getGuildVar[titulo4]$getGuildVar[titulo5]!=;$interactionupdate[❌️** | Não há nenhuma categoria existente no momento.**]]
   
   `
 }
