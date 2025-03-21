@@ -4,7 +4,7 @@ module.exports = {
   prototype: "modal",
   $if: "old",
   code: `
-  $interactionfollowUp[**☑️ | Opção de Atendimento Adicionada com Sucesso.**;true]
+  $interactionfollowUp[**☑️ | Opção de Atendimento Adicionada com Sucesso.**\n-# Saia e volte para o Menu de Opções para atualizar.;true]
   $if[1==1]
   $interactionupdate[**Utilize os Botões abaixo para adicionar e remover opções do Menu de Seleção do Painel de Tickets.** 
   {newEmbed: {title:Opções Criadas} {color:$getGuildVar[color_ticket]} {footer:$guildname | Todos os Direitos Reservados}{author:$guildname | Atendimentos}{thumbnail:$guildicon}
