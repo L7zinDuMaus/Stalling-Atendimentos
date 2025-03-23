@@ -10,7 +10,9 @@ module.exports = {
   $setGuildVar[qavaliacoes;$sum[$getGuildVar[qavaliacoes;$getGlobalUserVar[guildid]];1];$getGlobalUserVar[guildid]]
   $setGuildVar[tavaliacoes;$sum[$getGuildVar[tavaliacoes;$getGlobalUserVar[guildid]];$textinputvalue[estrelasaten_ticket]];$getGlobalUserVar[guildid]]
   $setGlobalUserVar[avaliacoes;$sub[$getGlobalUserVar[avaliacoes];1]]
-  $interactionEdit[**<@$authorid>, a sua Avaliação foi enviada com \`Sucesso\`. Agradecemos pela preferência!**]
-  $onlyif[$getGlobalUserVar[avaliacoes]>0;$interactionReply[**Você já enviou sua Avaliação!**]]
+  $interactionfollowUp[**☑️ | <@$authorid>, a sua Avaliação foi enviada com \`Sucesso\`. Agradecemos pela preferência!**]
+  $interactionDelete
+  $onlyif[$textinputvalue[estrelasaten_ticket]<=5;$interactionedit[**⚠️ | Você só pode inserir um número entre \`1 e 5 Estrelas\`.**]]
+  $onlyif[$getGlobalUserVar[avaliacoes]>0;$interactionReply[**Você já enviou sua Avaliação para este \`Atendimento\`.**;;true]]
   `
 }
