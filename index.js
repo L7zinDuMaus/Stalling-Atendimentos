@@ -75,9 +75,10 @@ client.functionManager.createFunction({
     let channelid = await d.util.getChannel(d, channel);
     let loggingid = await d.util.getChannel(d, logchannel);
     const attachment = await discordTranscripts.createTranscript(channelid, {
-      filename: "transcript.html",
+      filename: "transcricoes.html",
       saveImages: true,
       poweredBy: false,
+      footerText: "Um total de {number} Mensagens foram Transcritas com Sucesso.",
     });
 
     const f = await loggingid.send({
