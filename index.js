@@ -77,11 +77,11 @@ client.functionManager.createFunction({
     code: async d => {
       const discordTranscripts = require("discord-html-transcripts");
       const data = d.util.aoiFunc(d);
-      const [channel = d.channel.id, loguser = d.author.id] = data.inside.splits;
+      const [channel = "$getGuildVar[registros_ticket]", loguser = d.author.id] = data.inside.splits;
       let channelid = await d.util.getChannel(d, channel);
       let userid = await d.util.getUser(d, loguser);
       const attachment = await discordTranscripts.createTranscript(channelid, {
-        filename: "transcript.html",
+        filename: "$getGuildVar[registros_ticket].html",
         saveImages: true,
         poweredBy: false,
       });
