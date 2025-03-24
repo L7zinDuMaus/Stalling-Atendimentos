@@ -65,7 +65,7 @@ client.awaitedCommand({
 
 client.loadCommands("./Comandos"); // Carrega os comandos da pasta "comandos"
 
-bot.functionManager.createFunction({
+client.functionManager.createFunction({
   name: "$transcript",
   type: "djs",
   code: async d => {
