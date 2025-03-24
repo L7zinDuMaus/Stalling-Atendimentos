@@ -67,7 +67,8 @@ client.loadCommands("./Comandos"); // Carrega os comandos da pasta "comandos"
 
 client.functionManager.createFunction({
   name: "$transcript",
-  code: `$eval[$djseval[async d => {
+  type: "djs"
+  code: async d => {
     const discordTranscripts = require("discord-html-transcripts");
     const data = d.util.aoiFunc(d);
     const [channel = d.message.channel.id, logchannel = d.message.channel.id] = data.inside.splits;
@@ -88,7 +89,7 @@ client.functionManager.createFunction({
     return {
       code: d.util.setCode(data),
     };
-  }]]`
+  }
 });
 
 // Iniciar o bot
