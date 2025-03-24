@@ -67,7 +67,7 @@ client.loadCommands("./Comandos"); // Carrega os comandos da pasta "comandos"
 
 client.functionManager.createFunction({
   name: "$transcript",
-  type: "djs"
+  type: "djs",
   code: async d => {
     const discordTranscripts = require("discord-html-transcripts");
     const data = d.util.aoiFunc(d);
