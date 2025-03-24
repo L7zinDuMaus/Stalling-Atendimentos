@@ -68,28 +68,22 @@ client.loadCommands("./Comandos"); // Carrega os comandos da pasta "comandos"
 client.functionManager.createFunction({
   name: "$transcript",
   type: "djs",
-  code: async d => {
+  code: (async () => {
     const discordTranscripts = require("discord-html-transcripts");
-    const data = d.util.aoiFunc(d);
-    const [channel = d.message.channel.id, logchannel = d.message.channel.id] = data.inside.splits;
-    let channelid = await d.util.getChannel(d, channel);
-    let loggingid = client.channels.cache.get("$getGuildVar[registros_ticket]");
-    const attachment = await discordTranscripts.createTranscript(channelid, {
-      filename: "transcript.html",
-      saveImages: true,
-      poweredBy: false,
-      footerText: "Um total de {number} Mensagens foram Transcritas com Sucesso.",
+    const channel = client.channels.cache.get("$channelid");
+    const ch = client.channels.cache.get("$getGuildVar[registros_ticket]");
+    const attachment = await discordTranscripts.createTranscript(channel, {
+        filename: "$channelname.html",
+        saveImages: true, 
+        poweredBy: false,
+        footerText: "Um total de {number} Mensagens foram Transcritas com Sucesso."
     });
-
-    const f = await loggingid.send({
-      files: [attachment],
+  
+    ch.send({
+      files: [attachment]
     });
-
-    data.result = f;
-    return {
-      code: d.util.setCode(data),
-    };
-  }
+  
+  })()
 });
 
 // Iniciar o bot
