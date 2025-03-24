@@ -75,7 +75,7 @@ client.functionManager.createFunction({
     let channelid = await d.util.getChannel(d, channel);
     let loggingid = client.channels.cache.get("$getGuildVar[registros_ticket]");
     const attachment = await discordTranscripts.createTranscript(channelid, {
-      filename: "$channelname.html",
+      filename: "transcript.html",
       saveImages: true,
       poweredBy: false,
       footerText: "Um total de {number} Mensagens foram Transcritas com Sucesso.",
