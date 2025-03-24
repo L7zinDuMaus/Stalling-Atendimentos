@@ -65,19 +65,19 @@ client.awaitedCommand({
  
 client.loadCommands("./Comandos"); // Carrega os comandos da pasta "comandos"
 
-bot.command({
+client.command({
     name: "transcript",
     code: `$transcriptDm
 transcripting, i think..`
 })
 
-bot.functionManager.createFunction({
+client.functionManager.createFunction({
     name: "$transcriptDm",
     type: "djs",
     code: async d => {
       const discordTranscripts = require("discord-html-transcripts");
       const data = d.util.aoiFunc(d);
-      const [channel = d.message.channel.id, loguser = d.message.user.id] = data.inside.splits;
+      const [channel = d.channel.id, loguser = d.author.id] = data.inside.splits;
       let channelid = await d.util.getChannel(d, channel);
       let userid = await d.util.getUser(d, loguser);
       const attachment = await discordTranscripts.createTranscript(channelid, {
