@@ -65,32 +65,37 @@ client.awaitedCommand({
  
 client.loadCommands("./Comandos"); // Carrega os comandos da pasta "comandos"
 
-client.functionManager.createFunction({
-  name: "$transcript",
-  type: "djs",
-  code: async d => {
-    const discordTranscripts = require("discord-html-transcripts");
-    const data = d.util.aoiFunc(d);
-    const [channel = d.message.channel.id, logchannel = d.message.channel.id] = data.inside.splits;
-    let channelid = await d.util.getChannel(d, channel);
-    let loggingid = await d.util.getChannel(d, logchannel);
-    const attachment = await discordTranscripts.createTranscript(channelid, {
-      filename: "$channelname.html",
-      saveImages: true,
-      poweredBy: false,
-      footerText: "{number} mensagens carregadas.",
-    });
+bot.command({
+    name: "transcript",
+    code: `$transcriptDm
+transcripting, i think..`
+})
 
-    const f = await loggingid.send({
-      files: [attachment],
-    });
-
-    data.result = f;
-    return {
-      code: d.util.setCode(data),
-    };
-  }
-});
+bot.functionManager.createFunction({
+    name: "$transcriptDm",
+    type: "djs",
+    code: async d => {
+      const discordTranscripts = require("discord-html-transcripts");
+      const data = d.util.aoiFunc(d);
+      const [channel = d.message.channel.id, loguser = d.message.user.id] = data.inside.splits;
+      let channelid = await d.util.getChannel(d, channel);
+      let userid = await d.util.getUser(d, loguser);
+      const attachment = await discordTranscripts.createTranscript(channelid, {
+        filename: "transcript.html",
+        saveImages: true,
+        poweredBy: false,
+      });
+  
+      const f = await userid.send({
+        files: [attachment],
+      });
+  
+      data.result = f;
+      return {
+        code: d.util.setCode(data),
+      };
+    }
+  });
 
 // Iniciar o bot
 client.login();
