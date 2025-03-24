@@ -62,7 +62,7 @@ client.awaitedCommand({
   $sendmessage[Nice, you reacted with ❤️.]
   `
 });
-
+ 
 client.loadCommands("./Comandos"); // Carrega os comandos da pasta "comandos"
 
 client.functionManager.createFunction({
