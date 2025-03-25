@@ -139,7 +139,7 @@ client.variables({
     feedbacks_ticket: "",
     assumido_ticket: "1340677420469981205",
     desc_ticket: "",
-    color_ticket: "ffffff",
+    color_ticket: "FFFFFF",
     description_ticket: "",
     title_ticket: "",
     thumbnail_ticket: "$guildIcon",
