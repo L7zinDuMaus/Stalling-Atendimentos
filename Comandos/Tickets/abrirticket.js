@@ -3,6 +3,14 @@ module.exports = {
   type: "interaction",
   prototype: "selectMenu",
   code: `
+  $channelsendmessage[$getGuildVar[registros_ticket];{newEmbed: {author:$guildname | Atendimentos}{color:$getGuildVar[color_ticket]}{footer:$guildname | Todos os Direitos Reservados.}{thumbnail:$guildicon}
+{title:Novo Ticket Aberto}
+{field:$customemoji[user] | Usuário:<@$authorid> ($username - $authorid)}
+{field:$customemoji[registros] | Categoria:$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$nonescape[$getSelectMenuValues[all;,]];opcao1;$getGuildVar[titulo1]];opcao2;$getGuildVar[titulo2]];opcao3;$getGuildVar[titulo3]];opcao4;$getGuildVar[titulo4]];opcao5;$getGuildVar[titulo5]] ($replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$nonescape[$getSelectMenuValues[all;,]];opcao1;$getGuildVar[emoji1]];opcao2;$getGuildVar[emoji2]];opcao3;$getGuildVar[emoji3]];opcao4;$getGuildVar[emoji4]];opcao5;$getGuildVar[emoji5]])}
+{field:$customemoji[id] | ID do Ticket:$get[idtopicoticket]}
+{field:$customemoji[clock] | Horário de Abertura:<t\:$getChannelVar[abertura_ticket;$get[idtopicoticket]]> (<t\:$getChannelVar[abertura_ticket;$get[idtopicoticket]]\:R>)}
+}]
+  $onlyif[$getGuildVar[registros_ticket]!=;]
   $setChannelVar[abertura_ticket;$truncate[$divide[$dateStamp;1000]];$get[idtopicoticket]]
   $setchannelvar[solicitou_ticket;$authorid;$get[idtopicoticket]]
   $interactionReply[O seu Ticket foi aberto com sucesso em $messageurl[$channelsendmessage[$get[idtopicoticket];<@$authorid>$if[$getGuildVar[cargo_ticket]!=; | <@&$getguildvar[cargo_ticket]>]. {newEmbed: {footer:$guildname | Todos os Direitos Reservados} {thumbnail:$guildicon}{author:$guildname | Atendimentos}{title:$getguildvar[titulo_b_ticket]}{description:$replaceText[$replaceText[$replaceText[$replaceText[$getguildvar[descricao_b_ticket];|EMOJI|;$getChannelVar[emoji_ticket;$get[idtopicoticket]]];|ATENDENTE|;Ticket ainda não Assumido];|USUARIO|;<@$authorid>];|CATEGORIA|;$touppercase[$getChannelVar[categoria_ticket;$get[idtopicoticket]]]]}{color:$getGuildVar[color_ticket]}{footer:$getGuildVar[footer_ticket]}}{actionRow:
