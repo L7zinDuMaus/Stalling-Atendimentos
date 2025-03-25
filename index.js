@@ -67,55 +67,9 @@ client.loadCommands("./Comandos"); // Carrega os comandos da pasta "comandos"
 
 client.command({
     name: "transcript",
-    code: `$transcript
+    code: `$transcriptDm
 transcripting, i think..`
 })
-
-client.functionManager.createFunction({
-    name: "$transcript",
-    type: "djs",
-    code: async d => {
-        const discordTranscripts = require("discord-html-transcripts");
-        const data = d.util.aoiFunc(d);
-        const [channel = d.channel.id, loguser = d.author.id] = data.inside.splits;
-        
-        // Obtém o ID do canal e do usuário
-        let channelid = await d.util.getChannel(d, channel);
-        let userid = await d.util.getUser(d, loguser);
-        
-        // Obtém o ID do canal de registros armazenado na variável de guilda
-        let registrosChannelId = await d.db.get(`registros_ticket_${d.guild.id}`);
-        if (!registrosChannelId) {
-            data.result = "Erro: O canal de registros não foi definido.";
-            return { code: d.util.setCode(data) };
-        }
-
-        // Cria a transcrição do chat
-        const attachment = await discordTranscripts.createTranscript(channelid, {
-            filename: "registros.html",
-            saveImages: true,
-            poweredBy: false,
-            footerText: "{number} Mensagens Transcritas."
-        });
-
-        try {
-            // Envia a transcrição para o usuário via DM
-            await userid.send({ files: [attachment] });
-
-            // Envia a transcrição para o canal de registros
-            const registrosChannel = await d.util.getChannel(d, registrosChannelId);
-            await registrosChannel.send({ content: "Transcrição do ticket:", files: [attachment] });
-
-            data.result = "Transcrição enviada com sucesso.";
-        } catch (error) {
-            data.result = `Erro ao enviar transcrição: ${error.message}`;
-        }
-
-        return {
-            code: d.util.setCode(data),
-        };
-    }
-});
 
 client.functionManager.createFunction({
     name: "$transcriptDm",
