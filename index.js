@@ -102,6 +102,7 @@ client.functionManager.createFunction({
 client.login();
 
 client.variables({
+    emojisadd: "0",
     qavaliacoes: "0",
     tavaliacoes: "0",
     avaliacoes: "0",
