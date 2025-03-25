@@ -6,6 +6,15 @@ module.exports = [{
   code: `
   $setVar[emojisadd;1]
   ok
+$createAppEmoji[user;https://media.discordapp.net/attachments/1352060466175803543/1354113507221573632/1F466_color.png?ex=67e41bfa&is=67e2ca7a&hm=cb77d211daf306cda9ff19184b766e846994975ff5c88da122072bac97d746c3&]
+
+$createAppEmoji[id;https://media.discordapp.net/attachments/1352060466175803543/1354113507553181706/1F194_color.png?ex=67e41bfa&is=67e2ca7a&hm=81ff82cfd9f9ca257764fa838d78c370d30b195def90bffa6954710f6da212a7&]
+
+$createAppEmoji[timer;https://media.discordapp.net/attachments/1352060466175803543/1354113507855175761/23F1_color.png?ex=67e41bfa&is=67e2ca7a&hm=2a6b1f07e43047ec58bef0d54669affbfc3f938d3bef88d6ef8f27658f583185&]
+
+$createAppEmoji[clock;https://media.discordapp.net/attachments/1352060466175803543/1354113508152705045/E0AB_color.png?ex=67e41bfa&is=67e2ca7a&hm=a07f0473418c919fd3073704ff7a1adf2c32d93e66ca8f4b2b9a04bfdcd3d13f&]
+
+$createAppEmoji[escrita;https://media.discordapp.net/attachments/1352060466175803543/1354113596673757325/270D_color.png?ex=67e41c0f&is=67e2ca8f&hm=be2acf9b1bb0f42be9ce791fa7e1f3737cd569a117418e9caa573886940187e2&]
   
   $createAppEmoji[maiss;https://media.discordapp.net/attachments/1352060466175803543/1354073242213679174/2795_color.png?ex=67e3f67a&is=67e2a4fa&hm=239f7d98e916cb802c807a2a49238f29a43f2aa045b70875fdd95dbc5f9e563a&;true]
   
