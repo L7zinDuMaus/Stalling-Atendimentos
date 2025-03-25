@@ -6,6 +6,8 @@ module.exports = [{
   code: `
   $setVar[emojisadd;1]
   ok
+$createAppEmoji[canal;https://media.discordapp.net/attachments/1352060466175803543/1354149216238436352/0023-FE0F-20E3_color.png?ex=67e43d3c&is=67e2ebbc&hm=1817c4761897ce4ba8eafbe55703c51efa39fb1dc430305916bc29d41bdf0a33&;true]
+  
 $createAppEmoji[user;https://media.discordapp.net/attachments/1352060466175803543/1354113507221573632/1F466_color.png?ex=67e41bfa&is=67e2ca7a&hm=cb77d211daf306cda9ff19184b766e846994975ff5c88da122072bac97d746c3&]
 
 $createAppEmoji[id;https://media.discordapp.net/attachments/1352060466175803543/1354113507553181706/1F194_color.png?ex=67e41bfa&is=67e2ca7a&hm=81ff82cfd9f9ca257764fa838d78c370d30b195def90bffa6954710f6da212a7&]
