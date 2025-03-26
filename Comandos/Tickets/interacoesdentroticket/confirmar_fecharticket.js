@@ -4,11 +4,10 @@ module.exports = {
   prototype: "modal",
   code: `
   $deletechannel[$channelid]
-  $transcript[$channelid;$getGuildVar[registros_ticket]]
-  $onlyif[$getGuildVar[registros_ticket]!=;]
+  $if[$getGuildVar[registros_ticket]!=;$transcript[$channelid;$getGuildVar[registros_ticket]]]
+  
   $if[$getGuildVar[registros_ticket]!=;$channelsendmessage[$getGuildVar[registros_ticket];{newEmbed:{title:Novo Ticket Finalizado.}{author:$guildname | Atendimentos}{footer:$guildname | Todos os Direitos Reservados}{thumbnail:$guildicon}{color:$getGuildVar[color_ticket]}{field:$customemoji[user] | Solicitado por:<@$getChannelVar[solicitou_ticket;$get[channelid]]> ($username[$getChannelVar[solicitou_ticket;$get[channelid]]] - $getChannelVar[solicitou_ticket;$get[channelid]])}{field:$customEmoji[cadeado] | Fechado por\::<@$authorid> ($username - $authorid)}{field:$customEmoji[assumir] | Assumido por\::$if[$isbot[$getChannelVar[assumido_ticket;$get[channelid]]]==true;Ticket não Assumido :/;<@$getChannelVar[assumido_ticket;$get[channelid]]> ($if[$userexists[$getChannelVar[assumido_ticket;$get[channelid]]]==true;$username[$getChannelVar[assumido_ticket;$get[channelid]]]]- $getChannelVar[assumido_ticket;$get[channelid]])]}{field:$customEmoji[memberpanel] | Motivo do Encerramento:$textinputvalue[motivo_encerramentoticket]}{field:$customEmoji[registros] | Categoria do Ticket\::$getChannelVar[categoria_ticket;$get[channelid]] ($getChannelVar[emoji_ticket;$get[channelid]])}{field:$customEmoji[id]️ | ID do Ticket\::$get[channelid]}{field:$customEmoji[clock] | Data de Abertura:<t\:$getChannelVar[abertura_ticket;$get[channelid]]> (<t\:$getChannelVar[abertura_ticket;$get[channelid]]\:R>)}{field:$customEmoji[clock] | Data de Fechamento:<t\:$getChannelVar[fechamento_ticket;$get[channelid]]> (<t\:$getChannelVar[fechamento_ticket;$get[channelid]]\:R>)}{field:$customEmoji[timer] | Duração do Atendimento:$if[$get[tempoatendimentodias]>0;$get[tempoatendimentodias] Dia(s), $get[tempoatendimentohoras] Hora(s), $get[tempoatendimentominutos] Minuto(s), $get[tempoatendimentosegundos] Segundo(s).;$if[$get[tempoatendimentohoras]>0;$get[tempoatendimentohoras] Hora(s), $get[tempoatendimentominutos] Minuto(s), $get[tempoatendimentosegundos] Segundo(s).;$if[$get[tempoatendimentominutos]>0;$get[tempoatendimentominutos] Minuto(s), $get[tempoatendimentosegundos] Segundo(s).;$get[tempoatendimentosegundos] Segundo(s).]]]}}]]
- $onlyif[$getGuildVar[registros_ticket]!=;]
- $if[$getGuildVar[registros_ticket]==;$deletechannel[$channelid]]
+
   $senddm[**<@$getChannelVar[solicitou_ticket]>, você deseja avaliar o Atendimento que você recebeu no(a) \`$guildname\`? Utilize o Botão abaixo para deixar sua Avaliação!** {actionRow: {button:Deixar Avaliação:primary:avaliaratendimento_ticket::$customEmoji[star]}};$getChannelVar[solicitou_ticket]]
   $wait[10s]
   $let[channelid;$channelid]
