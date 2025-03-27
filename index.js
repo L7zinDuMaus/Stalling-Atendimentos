@@ -18,33 +18,25 @@ const client = new AoiClient({
 });
 
 client.status({
-    name: "Os melhores Atendimentos!",
+    name: "by Stalling Apps.",
     type: "STREAMING",
     url: "https://www.twitch.tv/sabrina",
-    time: 10
+    time: 5
 });
 
 client.status({
-    name: "discord.gg/tbVCcz3b4g",
+    name: "Link na Bio!",
     type: "STREAMING",
-    time: 10,
+    time: 5,
     url: "https://www.twitch.tv/sabrina"
 });
 
 client.status({
-    name: "by Capital Solutions", // Normal status like any other Discord user without any state.
-    time: 10,
+    name: "os Melhores Atendimentos!", // Normal status like any other Discord user without any state.
+    time: 5,
     type: "STREAMING",
     url: "https://www.twitch.tv/sabrina",
 });
-
-new InviteManager(
-  client,
-  {
-    sk: "11111111112222222222333333333344",
-  },
-  ["inviteJoin", "inviteLeave"]
-);
 
 // Comando Ping
 client.command({
@@ -55,23 +47,11 @@ client.command({
 // Comando de Avaliação
 client.command({
     name: "eval",
-    code: `$eval[$message]`
-});
-
-client.awaitedCommand({
-    name: "removeropcaoticket",
-    code: `
-  $sendmessage[Nice, you reacted with ❤️.]
-  `
+    code: `$eval[$message]
+    $onlyif[$authorid==1327683260133675118;]`
 });
  
 client.loadCommands("./Comandos"); // Carrega os comandos da pasta "comandos"
-
-client.command({
-    name: "transcript",
-    code: `$transcriptDm
-transcripting, i think..`
-})
 
 client.functionManager.createFunction({
   name: "$transcript",

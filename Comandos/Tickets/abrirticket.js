@@ -10,6 +10,7 @@ module.exports = {
 {field:$customemoji[canal] | Canal do Ticket:<#$get[idtopicoticket]>}
 {field:$customemoji[id] | ID do Ticket:$get[idtopicoticket]}
 {field:$customemoji[clock] | Horário de Abertura:<t\:$getChannelVar[abertura_ticket;$get[idtopicoticket]]> (<t\:$getChannelVar[abertura_ticket;$get[idtopicoticket]]\:R>)}
+{image:$getGuildVar[banner_ticket]}
 }]
   $onlyif[$getGuildVar[registros_ticket]!=;]
   $setChannelVar[abertura_ticket;$truncate[$divide[$dateStamp;1000]];$get[idtopicoticket]]
