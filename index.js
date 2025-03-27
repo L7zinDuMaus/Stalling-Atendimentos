@@ -168,6 +168,7 @@ client.variables({
     feedbacks_ticket: "",
     assumido_ticket: "1340677420469981205",
     desc_ticket: "",
+    banner_ticket: "https://media.discordapp.net/attachments/1354801843020238928/1354933160399339530/20250327_184001.png?ex=67e71756&is=67e5c5d6&hm=22e6d76df8f748f1c31ea0e9e6921cee2cdaa60a3a369e5ec5a70643afc943c7&",
     color_ticket: "FFFFFF",
     description_ticket: "",
     title_ticket: "",
