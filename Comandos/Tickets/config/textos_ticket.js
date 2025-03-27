@@ -12,6 +12,10 @@ module.exports = {
     {textInput:Qual o Título do Painel de Boas-Vindas?:1:titulobbpainel:false:Escreva RESETAR para deixar padrão.:5:50:$getGuildVar[titulo_b_ticket]}
   }{actionRow:
     {textInput:Qual a Descricao do Painel de Boas Vindas?:2:descricaobbpainel:false:Escreva RESETAR para deixar padrão.:5:1000:$getGuildVar[descricao_b_ticket]}
+  }{actionRow:
+    {textInput:Qual o Banner que Deseja Utilizar?:1:bannerpainel:true:Escreva RESETAR para deixar padrão.:5:70:$getGuildVar[banner_ticket]}
+  }{actionRow:
+    {textInput:Qual Cor mais combina com seu Servidor?:1:corpainel:true:Escreva RESETE para deixar padrão.:6:6:$getGuildVar[color_ticket]}
   }]
   `
 }
