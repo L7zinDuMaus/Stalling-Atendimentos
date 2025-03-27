@@ -8,7 +8,6 @@ $setGuildVar[descricao_ticket;$if[textinputvalue[descricaopainel]==RESETAR;$getC
 $setGuildVar[titulo_ticket;$if[textinputvalue[titulopainel]==RESETAR;$getChannelVar[titulo_ticket];$replaceText[$textinputvalue[titulopainel];RESETAR;$getChannelVar[titulo_ticket]]]]
 $setGuildVar[descricao_b_ticket;$if[textinputvalue[descricaobbpainel]==RESETAR;$getChannelVar[descricao_b_ticket];$replaceText[$textinputvalue[descricaobbpainel];RESETAR;$getChannelVar[descricao_b_ticket]]]]
 $setGuildVar[titulo_b_ticket;$if[textinputvalue[titulobbpainel]==RESETAR;$getChannelVar[titulo_b_ticket];$replaceText[$textinputvalue[titulobbpainel];RESETAR;$getChannelVar[titulo_b_ticket]]]]
-$setGuildVar[color_ticket;$if[textinputvalue[corpainel]==RESETE;$getChannelVar[color_ticket];$replaceText[$textinputvalue[corpainel];RESETAR;$getChannelVar[color_ticket]]]]
 $if[$isValidImageLink[$textinputvalue[bannerpainel]]==true;$setGuildVar[banner_ticket;$if[textinputvalue[bannerpainel]==RESETAR;$getChannelVar[banner_ticket];$replaceText[$textinputvalue[bannerpainel];RESETAR;$getChannelVar[banner_ticket]]]]]
     
   `
