@@ -14,8 +14,6 @@ module.exports = {
     {textInput:Qual a Descricao do Painel de Boas Vindas?:2:descricaobbpainel:false:Escreva RESETAR para deixar padrão.:5:1000:$getGuildVar[descricao_b_ticket]}
   }{actionRow:
     {textInput:Qual Banner Deseja Utilizar?:2:bannerpainel:true:Escreva RESETAR para deixar padrão.:5:200:$getGuildVar[banner_ticket]}
-  }{actionRow:
-    {textInput:Qual Cor deseja Utilizar?:1:corpainel:true:Escreva RESETE para deixar padrão.:6:6:$getGuildVar[color_ticket]}
   }]
   `
 }
