@@ -1,8 +1,10 @@
+const config = require('./config.json');
 const { AoiClient } = require("aoi.js");
 const { InviteManager } = require("@akarui/aoi.invite");
 
+const { token } = require("./config.json");
 const client = new AoiClient({
-    token: "MTM0MDY3NzQyMDQ2OTk4MTIwNQ.GltJAi.EwvQElFvtmf302vPM_BCdU7FZxifeJ4P_bDWZI", // Token do Bot
+    token: token, // Token do Bot
     prefix: ".", // Prefixo do Bot
     intents: ["MessageContent", "Guilds", "GuildMessages"],
     events: ["onMessage", "onInteractionCreate"],
