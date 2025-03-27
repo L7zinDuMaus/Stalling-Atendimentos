@@ -15,7 +15,7 @@ module.exports = {
   }{actionRow:
     {textInput:Qual Banner Deseja Utilizar?:1:bannerpainel:true:Escreva RESETAR para deixar padrão.:5:200:$getGuildVar[banner_ticket]}
   }{actionRow:
-    {textInput:Qual Cor mais combina com seu Servidor?:1:corpainel:true:Escreva RESETE para deixar padrão.:6:6:$getGuildVar[color_ticket]}
+    {textInput:Qual Cor deseja Utilizar?:1:corpainel:true:Escreva RESETE para deixar padrão.:6:6:$getGuildVar[color_ticket]}
   }]
   `
 }
