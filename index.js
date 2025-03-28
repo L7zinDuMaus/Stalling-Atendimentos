@@ -108,7 +108,7 @@ client.functionManager.createFunction({
         .setAuthor(`${guilda} | Sistema de Atendimentos`)
         .setFooter(`${guilda} | Todos os Direitos Reservados`)
         .setImage(`attachment://qrcode.png`);  // Usando URL de anexo
-
+ 
       // Envia a mensagem com o código PIX e o QR code gerado dentro do embed
       const attachment = Buffer.from(qrCodeBase64.split(",")[1], "base64");
       await d.channel.send({
