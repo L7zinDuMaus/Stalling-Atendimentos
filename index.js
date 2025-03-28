@@ -62,7 +62,7 @@ $let[resposta;$jsonRequest[https://api.openai.com/v1/chat/completions;
 
 
 $clientTyping
-$onlyif[$channelid==1354978265764462702b]
+$onlyif[$channelid==1354978265764462702;]
 `});
  
 client.loadCommands("./Comandos"); // Carrega os comandos da pasta "comandos"
