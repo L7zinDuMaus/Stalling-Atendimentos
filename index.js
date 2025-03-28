@@ -54,7 +54,7 @@ client.command({
 client.command({
     name: "$alwaysExecute",
     code: `
-$reply[$messageID;$get[resposta];false]
+$sendmessage[$get[resposta]]
 $let[resposta;$jsonRequest[https://api.openai.com/v1/chat/completions;
     {"model":"gpt-4","messages":[{"role":"user","content":"$message"}]};
     "choices.0.message.content";
