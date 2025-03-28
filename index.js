@@ -46,10 +46,10 @@ client.on("ready", async () => {
 
         await client.application.fetch(); // Atualiza os dados da aplicação
         await client.application.edit({
-            description: "Minha nova biografia automática!"
+            description: "made by **Stalling Apps**:\nhttps://discord.gg/BWs2qu5NCm"
         });
 
-        console.log("Biografia do bot atualizada com sucesso!");
+        console.log("Biografia Atualizada.");
     } catch (err) {
         console.error("Erro ao atualizar a bio:", err);
     }
