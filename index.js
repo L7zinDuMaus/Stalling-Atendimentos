@@ -38,27 +38,21 @@ client.status({
 
 // Comando de Inicialização
 client.readyCommand({
-    code: `
-$djsEval[
-(async () => {
+    code: `$log[Conectado em $userTag[$clientID]\nMeu Dono é: $userTag[$clientownerids]\nEstou em $guildCount Servidores\nMeu Link de Convite é: $getClientInvite ]`
+});
+client.on("ready", async () => {
     try {
-        if (!client.application) {
-            return d.channel.send("Erro: A propriedade application não está disponível.");
-        }
+        if (!client.application) return console.log("Erro: A propriedade application não está disponível.");
 
         await client.application.fetch(); // Atualiza os dados da aplicação
         await client.application.edit({
-            description: "made by **Stalling Apps**:\nhttps://discord.gg/BWs2qu5NCm"
+            description: "Minha nova biografia automática!"
         });
 
-        d.channel.send("Bio do bot foi atualizada para: ss");
+        console.log("Biografia do bot atualizada com sucesso!");
     } catch (err) {
         console.error("Erro ao atualizar a bio:", err);
-        d.channel.send("Erro ao atualizar a bio do bot.");
     }
-})();
-]
-    $log[Conectado em $userTag[$clientID]\nMeu Dono é: $userTag[$clientownerids]\nEstou em $guildCount Servidores\nMeu Link de Convite é: $getClientInvite ]`
 });
 
 // Comando Ping
