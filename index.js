@@ -39,14 +39,22 @@ client.status({
 // Comando de Inicialização
 client.readyCommand({
     code: `
-    $djsEval[
+$djsEval[
 (async () => {
     try {
+        if (!client.application) {
+            return d.channel.send("Erro: A propriedade application não está disponível.");
+        }
 
         await client.application.fetch(); // Atualiza os dados da aplicação
         await client.application.edit({
-            description: "made by **STALLING APPS**:\nhttps://discord.gg/BWs2qu5NCm"
+            description: "made by **Stalling Apps**:\nhttps://discord.gg/BWs2qu5NCm"
         });
+
+        d.channel.send("Bio do bot foi atualizada para: ss");
+    } catch (err) {
+        console.error("Erro ao atualizar a bio:", err);
+        d.channel.send("Erro ao atualizar a bio do bot.");
     }
 })();
 ]
