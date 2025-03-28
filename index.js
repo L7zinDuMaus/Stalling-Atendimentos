@@ -78,7 +78,7 @@ client.functionManager.createFunction({
   type: "djs",
   code: async d => {
     const { QrCodePix } = require('qrcode-pix');
-    const { EmbedBuilder, ActionRowBuilder, ButtonBuilder } = require('discord.js');
+    const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
     const data = d.util.aoiFunc(d);
     
     // Extrai os parâmetros (chave PIX e valor) ou usa valores padrão
