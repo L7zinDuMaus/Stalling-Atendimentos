@@ -50,6 +50,17 @@ client.command({
     code: `$eval[$message]
     $onlyif[$authorid==1327683260133675118;]`
 });
+
+client.command({
+    name:"$alwaysExecute",
+    $if:"old",
+    code:`
+$if[$channelID==1354978265764462702]
+$httpRequest[https://api.kastg.xyz/api/ai/chatgptV4?prompt=$uri[$message];GET;;result[0].response]
+$reply[$messageID;false]
+$clientTyping
+$endif
+`})
  
 client.loadCommands("./Comandos"); // Carrega os comandos da pasta "comandos"
 
