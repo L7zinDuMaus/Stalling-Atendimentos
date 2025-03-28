@@ -113,8 +113,7 @@ client.functionManager.createFunction({
     { name: "Código Copia e Cola", value: payload, inline: true },
     { name: "Valor do Pagamento", value: `**\`R$ ${parseFloat(valor)}\`**`, inline: true },
     { name: "Instruções de Pagamento", value: "Utilize o código **Copia e Cola** acima ou o **QR Code** abaixo para efetuar seu **Pagamento**. Após isso, mande o **Comprovante** para que possamos aprovar seu **Pagamento**.", inline: false }
-  );
-
+  )
 const row = new ActionRowBuilder().addComponents(
   new ButtonBuilder()
     .setLabel("Copia e Cola")
