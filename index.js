@@ -103,7 +103,7 @@ client.functionManager.createFunction({
       // Criação do embed com o QR Code
       const embed = new EmbedBuilder()
   .setColor("#FFFFFF")
-  .setTitle("Novo Pagamento Solicitado por ${d.author.username}")
+  .setTitle("Novo Pagamento Solicitado por ${d.member.user.username}")
   .setDescription(`Informações do Pagamento Abaixo.`)
   .setThumbnail(d.guild?.iconURL({ size: 4096, dynamic: true }))
   .setAuthor({ name: `${guilda} | Sistema de Atendimentos` })
