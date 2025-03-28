@@ -104,7 +104,6 @@ client.functionManager.createFunction({
       const embed = new EmbedBuilder()
         .setColor("#FFFFFF")  // Cor do embed
         .setTitle("Novo Pagamento Solicitado")
-        .setThumbnail(thumb)
         .setDescription(`Código PIX: ${payload}`)
         .setAuthor("${guilda} | Sistema de Atendimentos")
         .setFooter("${guilda} | Todos os Direitos Reservados")
