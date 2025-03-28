@@ -103,7 +103,7 @@ client.functionManager.createFunction({
       // Criação do embed com o QR Code
       const embed = new EmbedBuilder()
   .setColor("#FFFFFF")
-  .setTitle("Novo Pagamento Solicitado por ${d.author?.username}")
+  .setTitle("Novo Pagamento Solicitado por ${d.author.username}")
   .setDescription(`Informações do Pagamento Abaixo.`)
   .setThumbnail(d.guild?.iconURL({ size: 4096, dynamic: true }))
   .setAuthor({ name: `${guilda} | Sistema de Atendimentos` })
@@ -112,7 +112,7 @@ client.functionManager.createFunction({
   .addFields(
     { name: "Código Copia e Cola", value: payload, inline: true },
     { name: "Valor do Pagamento", value: `**\`R$ ${parseFloat(valor)}\`**`, inline: true },
-    { name: "Instruções de Pagamento", value: "Utilize o código **Copia e Cola** acima ou o **QR Code** abaixo para efetuar seu **Pagamento**.", inline: false }
+    { name: "Instruções de Pagamento", value: "Utilize o código **Copia e Cola** acima ou o **QR Code** abaixo para efetuar seu **Pagamento**. Após isso, mande o **Comprovante** para que possamos aprovar seu **Pagamento**.", inline: false }
   );
 
       // Envia a mensagem com o código PIX e o QR code gerado dentro do embed
