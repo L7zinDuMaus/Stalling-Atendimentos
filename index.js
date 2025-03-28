@@ -63,11 +63,19 @@ client.functionManager.createFunction({
   params: ["bio"],
   type: "djs",
   code: `
-  client.application.edit({
-    description: "{bio}";
-})
+  (async () => {
+    try {
+      await client.application.edit({
+        description: "{bio}"
+      });
+      d.channel.send("Bio do bot atualizada para: {bio}");
+    } catch (err) {
+      console.error("Erro ao atualizar a bio:", err);
+      d.channel.send("Erro ao atualizar a bio do bot.");
+    }
+  })();
   `
-})
+});
 
 // Função Transcript
 client.functionManager.createFunction({
