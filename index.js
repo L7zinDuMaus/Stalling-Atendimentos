@@ -102,12 +102,18 @@ client.functionManager.createFunction({
 
       // Criação do embed com o QR Code
       const embed = new EmbedBuilder()
-        .setColor("#FFFFFF")  // Cor do embed
-        .setTitle("Novo Pagamento Solicitado")
-        .setDescription(`Código PIX: ${payload}`)
-        .setAuthor({ name: `${guilda} | Sistema de Atendimentos` })
-        .setFooter({ text: `${guilda} | Todos os Direitos Reservados` })
-        .setImage(`attachment://qrcode.png`);  // Usando URL de anexo
+  .setColor("#FFFFFF")
+  .setTitle("Novo Pagamento Solicitado")
+  .setDescription(`Informações do Pagamento Abaixo.`)
+  .setAuthor({ name: `${guilda} | Sistema de Atendimentos` })
+  .setFooter({ text: `${guilda} | Todos os Direitos Reservados` })
+  .setImage(`attachment://qrcode.png`)
+  .setThumbnail(thumb) // Miniatura
+  .addFields(
+    { name: "Código Copia e Cola", value: payload, inline: true },
+    { name: "Valor", value: `R$ ${valor.toFixed(2)}`, inline: true },
+    { name: "Instruções de Pagamento", value: "Utilize o código Copia e Cola acima ou o QR Code abaixo para efetuar seu pagamento.", inline: false }
+  );
 
       // Envia a mensagem com o código PIX e o QR code gerado dentro do embed
       const attachment = Buffer.from(qrCodeBase64.split(",")[1], "base64");
