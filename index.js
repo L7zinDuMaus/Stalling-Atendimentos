@@ -78,7 +78,7 @@ client.functionManager.createFunction({
   type: "djs",
   code: async d => {
     const { QrCodePix } = require('qrcode-pix');
-    const { EmbedBuilder } = require('discord.js');
+    const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, buttonStyle } = require('discord.js');
     const data = d.util.aoiFunc(d);
     
     // Extrai os parâmetros (chave PIX e valor) ou usa valores padrão
@@ -114,6 +114,18 @@ client.functionManager.createFunction({
     { name: "Valor do Pagamento", value: `**\`R$ ${parseFloat(valor)}\`**`, inline: true },
     { name: "Instruções de Pagamento", value: "Utilize o código **Copia e Cola** acima ou o **QR Code** abaixo para efetuar seu **Pagamento**. Após isso, mande o **Comprovante** para que possamos aprovar seu **Pagamento**.", inline: false }
   );
+
+const row = new ActionRowBuilder().addComponents(
+  new ButtonBuilder()
+    .setLabel("Copia e Cola")
+    .setStyle(ButtonStyle.Primary)
+    .setCustomId("copia_e_cola"),
+    
+  new ButtonBuilder()
+    .setLabel("Aprovar Pagamento")
+    .setStyle(ButtonStyle.Success)
+    .setCustomId("aprovar_pagamento")
+);
 
       // Envia a mensagem com o código PIX e o QR code gerado dentro do embed
       const attachment = Buffer.from(qrCodeBase64.split(",")[1], "base64");
