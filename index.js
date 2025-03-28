@@ -56,12 +56,13 @@ client.command({
     $if: "old",
     code: `
 $if[$channelID==1354978265764462702]
+$reply[$messageID;$get[resposta];false]
 $let[resposta;$jsonRequest[https://api.openai.com/v1/chat/completions;
     {"model":"gpt-4","messages":[{"role":"user","content":"$message"}]};
     "choices.0.message.content";
     {"Authorization":"Bearer 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","Content-Type":"application/json"}]]
 
-$reply[$messageID;$get[resposta];false]
+
 $clientTyping
 $endif
 `});
