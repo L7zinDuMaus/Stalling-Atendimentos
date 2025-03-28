@@ -59,7 +59,7 @@ client.loadCommands("./Comandos");
 
 // Função Edit Bio
 client.functionManager.createFunction({
-  name: "setclientbio",
+  name: "$setclientbio",
   params: ["bio"],
   type: "djs",
   code: `
