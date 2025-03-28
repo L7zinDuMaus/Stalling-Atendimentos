@@ -105,8 +105,8 @@ client.functionManager.createFunction({
         .setColor("#FFFFFF")  // Cor do embed
         .setTitle("Novo Pagamento Solicitado")
         .setDescription(`Código PIX: ${payload}`)
-        .setAuthor("${guilda} | Sistema de Atendimentos")
-        .setFooter("${guilda} | Todos os Direitos Reservados")
+        .setAuthor({ name: `${guilda} | Sistema de Atendimentos` })
+        .setFooter({ text: `${guilda} | Todos os Direitos Reservados` })
         .setImage(`attachment://qrcode.png`);  // Usando URL de anexo
 
       // Envia a mensagem com o código PIX e o QR code gerado dentro do embed
