@@ -111,7 +111,7 @@ client.functionManager.createFunction({
   .setImage(`attachment://qrcode.png`)
   .addFields(
     { name: "Código Copia e Cola", value: payload, inline: true },
-    { name: "Valor", value: `R$ ${valor.toFixed(2)}`, inline: true },
+    { name: "Valor", value: `R$ ${valor}`, inline: true },
     { name: "Instruções de Pagamento", value: "Utilize o código Copia e Cola acima ou o QR Code abaixo para efetuar seu pagamento.", inline: false }
   );
 
