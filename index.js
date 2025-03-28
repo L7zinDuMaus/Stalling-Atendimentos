@@ -82,7 +82,7 @@ client.functionManager.createFunction({
     const data = d.util.aoiFunc(d);
     
     // Extrai os parâmetros (chave PIX e valor) ou usa valores padrão
-    const [chave = "", valor = 0, guilda = "", thumb = ""] = data.inside.splits;
+    const [chave = "", valor = 0, guilda = ""] = data.inside.splits;
 
     try {
       // Verifica se a chave PIX e o valor são válidos
