@@ -82,7 +82,7 @@ client.functionManager.createFunction({
     const data = d.util.aoiFunc(d);
     
     // Extrai os parâmetros (chave PIX e valor) ou usa valores padrão
-    const [chave = "", valor = 0, guilda = "", thumb = ""] = data.inside.splits;
+    const [chave = "", valor = 0, guild = "", thumb = ""] = data.inside.splits;
 
     try {
       // Verifica se a chave PIX e o valor são válidos
@@ -104,10 +104,12 @@ client.functionManager.createFunction({
       const embed = new EmbedBuilder()
         .setColor("#FFFFFF")  // Cor do embed
         .setTitle("Novo Pagamento Solicitado")
+        .setThumbnail("${thumb}")
         .setDescription(`Código PIX: ${payload}`)
-        .setFooter(`${guilda} | Todos os Direitos Reservados`)
+        .setAuthor("${guilda} | Sistema de Atendimentos")
+        .setFooter("${guilda} | Todos os Direitos Reservados")
         .setImage(`attachment://qrcode.png`);  // Usando URL de anexo
- 
+
       // Envia a mensagem com o código PIX e o QR code gerado dentro do embed
       const attachment = Buffer.from(qrCodeBase64.split(",")[1], "base64");
       await d.channel.send({
