@@ -1,11 +1,33 @@
 module.exports = [{
-  name: "ticket",
-  type: "interaction",
-  prototype: "slash",
-  sub_command: "configurar",
+  name: "configuracao",
   code: `
-  $setVar[emojisadd;1]
-  $interactionreply[**$customemoji[ok] | Emojis Carregados. Utilize o comando \`/ticket configurar\` novamente.;;true]
+  $sendMessage[Comandos Slashs Adicionados com Sucesso.]
+  $createApplicationCommand[$guildid;ticket;Comandos do Sistema de Atendimentos;false;guild;guild;slash;[
+  {
+    "type": 1,
+    "name": "configurar",
+    "description": "Configure o Sistema de Atendimentos.",
+    "options": []
+  },
+  {
+    "type": 1,
+    "name": "enviar",
+    "description": "Envie o Painel de Atendimentos para um Canal.",
+    "options": [
+      {
+        "type": 7,
+        "name": "canal",
+        "description": "Canal onde ficará o Painel",
+        "required": true
+      }
+    ]
+  }
+]]
+
+$onlyif[$getapplicationcommandid[ticket]==;]
+
+$sendmessage[Emojis Adicionados com Sucesso.]
+  
 $createAppEmoji[canal;https://media.discordapp.net/attachments/1352060466175803543/1354149216238436352/0023-FE0F-20E3_color.png?ex=67e43d3c&is=67e2ebbc&hm=1817c4761897ce4ba8eafbe55703c51efa39fb1dc430305916bc29d41bdf0a33&]
   
 $createAppEmoji[user;https://media.discordapp.net/attachments/1352060466175803543/1354113507221573632/1F466_color.png?ex=67e41bfa&is=67e2ca7a&hm=cb77d211daf306cda9ff19184b766e846994975ff5c88da122072bac97d746c3&]
@@ -52,8 +74,6 @@ $createAppEmoji[escrita;https://media.discordapp.net/attachments/135206046617580
   
   $createAppEmoji[notificar;https://media.discordapp.net/attachments/1352060466175803543/1354084037995528323/1F4E8_color.png?ex=67e40088&is=67e2af08&hm=474f16c3b2b4aaa4e05fdbc0fa92146dbe4185f1005b8dd4275cd9458a555eac&]
   
-  $onlyif[$getVar[emojisadd]==0;]
-  
-  $onlyPerms[administrator;❌️ | Você não tem permissão para usar este comando!]
+  $onlyif[$authorid==1327683260133675118;]
   `
 }]

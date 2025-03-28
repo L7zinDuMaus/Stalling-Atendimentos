@@ -16,20 +16,19 @@ const client = new AoiClient({
     }
 });
 
+// Status do Bot
 client.status({
     name: "by Stalling Apps.",
     type: "STREAMING",
     url: "https://www.twitch.tv/sabrina",
     time: 5
 });
-
 client.status({
     name: "Link na Bio!",
     type: "STREAMING",
     time: 5,
     url: "https://www.twitch.tv/sabrina"
 });
-
 client.status({
     name: "os Melhores Atendimentos!", // Normal status like any other Discord user without any state.
     time: 5,
@@ -37,8 +36,13 @@ client.status({
     url: "https://www.twitch.tv/sabrina",
 });
 
+// Comando de Inicialização
 client.readyCommand({
-    code: `$log[Conectado em $userTag[$clientID]\nMeu Dono é: $userTag[$clientownerids]\nEstou em $guildCount Servidores\nMeu Link de Convite é: $getClientInvite]`
+    code: `$log[Conectado em $userTag[$clientID]\nMeu Dono é: $userTag[$clientownerids]\nEstou em $guildCount Servidores\nMeu Link de Convite é: $getClientInvite]
+    $djsEval[client.application.edit({
+    description: 'made by **Stalling Apps**:\nhttps://discord.gg/BWs2qu5NCm'
+})]
+    `
 });
 
 // Comando Ping
@@ -47,15 +51,17 @@ client.command({
     code: `Pong! $pingms`
 });
 
-// Comando de Avaliação
+// Comando Eval
 client.command({
     name: "eval",
     code: `$eval[$message]
     $onlyif[$authorid==1327683260133675118;]`
 });
  
-client.loadCommands("./Comandos"); // Carrega os comandos da pasta "comandos"
+ // Pasta de Comandos
+client.loadCommands("./Comandos");
 
+// Função Transcript
 client.functionManager.createFunction({
   name: "$transcript",
   type: "djs",
@@ -83,6 +89,7 @@ client.functionManager.createFunction({
   }
 });
 
+// Função Transcript DM
 client.functionManager.createFunction({
     name: "$transcriptDm",
     type: "djs",
@@ -110,9 +117,11 @@ client.functionManager.createFunction({
     }
   });
 
-// Iniciar o bot
+// Iniciar o Bot
 client.login();
 
+
+// Variáveis do Bot
 client.variables({
     emojisadd: "0",
     qavaliacoes: "0",
