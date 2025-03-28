@@ -37,6 +37,10 @@ client.status({
     url: "https://www.twitch.tv/sabrina",
 });
 
+client.readyCommand({
+    code: `$log[Conectado em $userTag[$clientID]\nMeu Dono é: $userTag[$clientownerids]\nEstou em $guildCount Servidores\nMeu Link de Convite é: $getClientInvite]`
+});
+
 // Comando Ping
 client.command({
     name: "ping",
