@@ -53,9 +53,7 @@ client.command({
 
 client.command({
     name: "$alwaysExecute",
-    $if: "old",
     code: `
-$if[$channelID==1354978265764462702]
 $reply[$messageID;$get[resposta];false]
 $let[resposta;$jsonRequest[https://api.openai.com/v1/chat/completions;
     {"model":"gpt-4","messages":[{"role":"user","content":"$message"}]};
@@ -64,7 +62,7 @@ $let[resposta;$jsonRequest[https://api.openai.com/v1/chat/completions;
 
 
 $clientTyping
-$endif
+$onlyif[$channelid==1354978265764462702b]
 `});
  
 client.loadCommands("./Comandos"); // Carrega os comandos da pasta "comandos"
