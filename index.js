@@ -72,6 +72,68 @@ client.command({
 client.loadCommands("./Comandos");
 
 
+// Funcao de Gerar Pagamentos
+client.functionManager.createFunction({
+  name: "$criarpagamento",
+  type: "djs",
+  code: async d => {
+    const { QrCodePix } = require('qrcode-pix');
+    const { EmbedBuilder } = require('discord.js');
+    const data = d.util.aoiFunc(d);
+    
+    // Extrai os parâmetros (chave PIX e valor) ou usa valores padrão
+    const [chave = "", valor = 0] = data.inside.splits;
+
+    try {
+      // Verifica se a chave PIX e o valor são válidos
+      if (!chave || isNaN(valor) || valor <= 0) {
+        return d.channel.send("Erro: Chave PIX inválida ou valor incorreto.");
+      }
+
+      // Criação do QR Code PIX
+      const qrCodePix = QrCodePix({
+        version: "01",
+        key: chave,
+        value: parseFloat(valor),
+      });
+
+      const payload = qrCodePix.payload();  // Código PIX
+      const qrCodeBase64 = await qrCodePix.base64();  // QR Code em base64
+
+      // Criação do embed com o QR Code
+      const embed = new EmbedBuilder()
+        .setColor("#0099FF")  // Cor do embed
+        .setTitle("Código PIX Gerado")
+        .setDescription(`Código PIX: ${payload}`)
+        .setImage(`attachment://qrcode.png`);  // Usando URL de anexo
+
+      // Envia a mensagem com o código PIX e o QR code gerado dentro do embed
+      const attachment = Buffer.from(qrCodeBase64.split(",")[1], "base64");
+      await d.channel.send({
+        embeds: [embed],
+        files: [{
+          attachment,
+          name: "qrcode.png",
+        }],
+      });
+
+      // Retorna sucesso
+      data.result = "Código PIX gerado e enviado com sucesso!";
+      return {
+        code: d.util.setCode(data),
+      };
+
+    } catch (err) {
+      console.error("Erro ao gerar QR Code:", err);
+      return {
+        code: d.util.setCode({
+          result: "Ocorreu um erro ao gerar o QR Code.",
+        }),
+      };
+    }
+  }
+});
+
 // Função Transcript
 client.functionManager.createFunction({
   name: "$transcript",
