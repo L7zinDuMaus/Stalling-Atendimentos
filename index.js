@@ -65,9 +65,14 @@ client.functionManager.createFunction({
   code: `
   (async () => {
     try {
+      if (!client.application) {
+        return d.channel.send("Erro: A propriedade application não está disponível.");
+      }
+      
       await client.application.edit({
         description: "{bio}"
       });
+
       d.channel.send("Bio do bot atualizada para: {bio}");
     } catch (err) {
       console.error("Erro ao atualizar a bio:", err);
