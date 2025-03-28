@@ -105,10 +105,10 @@ client.functionManager.createFunction({
   .setColor("#FFFFFF")
   .setTitle("Novo Pagamento Solicitado")
   .setDescription(`Informações do Pagamento Abaixo.`)
+  .setThumbnail(d.guild?.iconURL({ size: 4096, dynamic: true }))
   .setAuthor({ name: `${guilda} | Sistema de Atendimentos` })
   .setFooter({ text: `${guilda} | Todos os Direitos Reservados` })
   .setImage(`attachment://qrcode.png`)
-  .setThumbnail(thumb) // Miniatura
   .addFields(
     { name: "Código Copia e Cola", value: payload, inline: true },
     { name: "Valor", value: `R$ ${valor.toFixed(2)}`, inline: true },
