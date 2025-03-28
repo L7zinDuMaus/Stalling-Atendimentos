@@ -38,11 +38,7 @@ client.status({
 
 // Comando de Inicialização
 client.readyCommand({
-    code: `$log[Conectado em $userTag[$clientID]\nMeu Dono é: $userTag[$clientownerids]\nEstou em $guildCount Servidores\nMeu Link de Convite é: $getClientInvite]
-    $djsEval[client.application.edit({
-    description: 'made by **Stalling Apps**:\nhttps://discord.gg/BWs2qu5NCm'
-})]
-    `
+    code: `$log[Conectado em $userTag[$clientID]\nMeu Dono é: $userTag[$clientownerids]\nEstou em $guildCount Servidores\nMeu Link de Convite é: $getClientInvite ]`
 });
 
 // Comando Ping
@@ -60,6 +56,18 @@ client.command({
  
  // Pasta de Comandos
 client.loadCommands("./Comandos");
+
+// Função Edit Bio
+client.functionManager.createFunction({
+  name: "setclientbio",
+  params: ["bio"],
+  type: "djs",
+  code: `
+  client.application.edit({
+    description: "{bio}";
+})
+  `
+})
 
 // Função Transcript
 client.functionManager.createFunction({
