@@ -1,6 +1,5 @@
 const config = require('./config.json');
 const { AoiClient } = require("aoi.js");
-const { InviteManager } = require("@akarui/aoi.invite");
 
 const { token } = require("./config.json");
 const client = new AoiClient({
@@ -50,18 +49,6 @@ client.command({
     code: `$eval[$message]
     $onlyif[$authorid==1327683260133675118;]`
 });
-
-client.command({
-    name: "$alwaysExecute",
-    code: `
-$sendmessage[$get[resposta]]
-$let[resposta;$jsonRequest[https://api.openai.com/v1/chat/completions;
-    {"model":"gpt-4","messages":[{"role":"user","content":"$message"}]};
-    "choices.0.message.content";
-    {"Authorization":"Bearer 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","Content-Type":"application/json"}]]
-$clientTyping
-$onlyif[$channelid==1354978265764462702;b]
-`});
  
 client.loadCommands("./Comandos"); // Carrega os comandos da pasta "comandos"
 
