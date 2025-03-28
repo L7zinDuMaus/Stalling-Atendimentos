@@ -42,13 +42,10 @@ client.readyCommand({
     $djsEval[
 (async () => {
     try {
-        if (!client.application) {
-            return d.channel.send("Erro: A propriedade application não está disponível.");
-        }
 
         await client.application.fetch(); // Atualiza os dados da aplicação
         await client.application.edit({
-            description: "made by **STALLING APPS**:https://discord.gg/BWs2qu5NCm"
+            description: "made by **STALLING APPS**:\nhttps://discord.gg/BWs2qu5NCm"
         });
     }
 })();
