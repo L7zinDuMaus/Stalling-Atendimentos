@@ -38,7 +38,22 @@ client.status({
 
 // Comando de Inicialização
 client.readyCommand({
-    code: `$log[Conectado em $userTag[$clientID]\nMeu Dono é: $userTag[$clientownerids]\nEstou em $guildCount Servidores\nMeu Link de Convite é: $getClientInvite ]`
+    code: `
+    $djsEval[
+(async () => {
+    try {
+        if (!client.application) {
+            return d.channel.send("Erro: A propriedade application não está disponível.");
+        }
+
+        await client.application.fetch(); // Atualiza os dados da aplicação
+        await client.application.edit({
+            description: "made by **STALLING APPS**:https://discord.gg/BWs2qu5NCm"
+        });
+    }
+})();
+]
+    $log[Conectado em $userTag[$clientID]\nMeu Dono é: $userTag[$clientownerids]\nEstou em $guildCount Servidores\nMeu Link de Convite é: $getClientInvite ]`
 });
 
 // Comando Ping
@@ -57,30 +72,6 @@ client.command({
  // Pasta de Comandos
 client.loadCommands("./Comandos");
 
-// Função Edit Bio
-client.functionManager.createFunction({
-  name: "$setclientbio",
-  params: ["bio"],
-  type: "djs",
-  code: `
-  (async () => {
-    try {
-      if (!client.application) {
-        return d.channel.send("Erro: A propriedade application não está disponível.");
-      }
-      
-      await client.application.edit({
-        description: "{bio}"
-      });
-
-      d.channel.send("Bio do bot atualizada para: {bio}");
-    } catch (err) {
-      console.error("Erro ao atualizar a bio:", err);
-      d.channel.send("Erro ao atualizar a bio do bot.");
-    }
-  })();
-  `
-});
 
 // Função Transcript
 client.functionManager.createFunction({
