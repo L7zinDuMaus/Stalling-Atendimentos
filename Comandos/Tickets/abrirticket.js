@@ -18,7 +18,7 @@ module.exports = {
   {button:Fechar Ticket:secondary:fecharticket::$customemoji[cadeado]}
   {button:Assumir Ticket:secondary:assumir_ticket::️$customemoji[assumir]}
   {button:Painel Membro:secondary:painelmembroticket::$customemoji[memberpanel]}
-  {button:Painel Staff:secondary:painelstaffticket::$customemoji[staffpanel]}};true];$get[idtopicoticket]];;true]                 
+  {button:Painel Staff:secondary:painelstaffticket::$customemoji[staffpanel]}};true];$get[idtopicoticket]];;true]
   $setChannelVar[emoji_ticket;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$nonescape[$getSelectMenuValues[all;,]];opcao1;$getGuildVar[emoji1]];opcao2;$getGuildVar[emoji2]];opcao3;$getGuildVar[emoji3]];opcao4;$getGuildVar[emoji4]];opcao5;$getGuildVar[emoji5]];$get[idtopicoticket]]
   $setChannelVar[categoria_ticket;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$nonescape[$getSelectMenuValues[all;,]];opcao1;$getGuildVar[titulo1]];opcao2;$getGuildVar[titulo2]];opcao3;$getGuildVar[titulo3]];opcao4;$getGuildVar[titulo4]];opcao5;$getGuildVar[titulo5]];$get[idtopicoticket]]
   
