@@ -15,7 +15,7 @@ module.exports = [{
 {title:Novo Pagamento Solicitado.}
 {field:$customemoji[user] | Quem foi Cobrado:<@$getChannelVar[solicitou_ticket]> ($username[$getChannelVar[solicitou_ticket]] - $getChannelVar[solicitou_ticket])}
 {field:$customemoji[assumir] | Quem Cobrou:<@$authorid> ($username - $authorid)}
-{field:$customEmoji[registros] | Chave PIX:**$getChannelVar[chavepix]**}
+{field:$customEmoji[registros] | Chave PIX:**\`$getChannelVar[chavepix]\`**}
 {field:$customemoji[star] | Valor Cobrado:**\`R\$ $getChannelVar[valorpix]\`**}
 {field:$customemoji[registros] | Categoria:$getChannelVar[categoria_ticket] ($getChannelVar[emoji_ticket])}
 {field:$customemoji[canal] | Canal do Ticket:<#$channelid>}
@@ -27,6 +27,7 @@ $senddm[**Olá <@$getChannelVar[solicitou_ticket]>! O Staff <@$authorid> ($usern
 {actionRow: {button:Ir para Ticket de Atendimento:link:$messageurl[$sendmessage[**<@$authorid>, o Membro <@$getChannelVar[solicitou_ticket]> foi notificado desta Cobrança com sucesso.**;true]]::🛩}};$getChannelVar[solicitou_ticket]]
 
   $interactionedit[$criarpagamento[$textinputvalue[chavepix_ticket];$textinputvalue[valorpix_ticket];$guildname] {actionRow: {button:Notificar Membro:primary:notificarmembro_ticket::📨}{button:Renomear Ticket:success:renomear_ticket:true:🖌}{button:Gerar Pagamento:secondary:gerar_pagamento:true:💵}};;true]
+  $setGuildVar[chavepix;$textinputvalue[chavepix_ticket]]
   $setChannelVar[chavepix;$textinputvalue[chavepix_ticket]]
   $setChannelVar[valorpix;$textinputvalue[valorpix_ticket]]
   $onlyPerms[administrator;$interactionUpdate[**❌️ | Apenas Administradores podem usar esta função.** {actionRow: {button:Notificar Membro:primary:notificarmembro_ticket::📨}{button:Renomear Ticket:success:renomear_ticket:true:🖌}{button:Gerar Pagamento:secondary:gerar_pagamento::💵}};;true]
@@ -38,6 +39,26 @@ $senddm[**Olá <@$getChannelVar[solicitou_ticket]>! O Staff <@$authorid> ($usern
   prototype: "button",
   code: `
   $interactionReply[$criarpagamentocopiaecola[$getChannelVar[chavepix];$getChannelVar[valorpix];$guildname];;true]
+  
+  `
+},{
+  name: "aprovar_pagamento",
+  type: "interaction",
+  prototype: "button",
+  code: `
+  $editmessage[$messageid;<@$getChannelVar[solicitou_ticket]> {newEmbed:
+    {author:$guildname | Atendimentos}
+    {footer:$guildname | Todos os Direitos Reservados}
+    {color:$getGuildVar[color_ticket]}
+    {thumbnail:$guildicon}
+    {title:Pagamento Aprovado com Sucesso.}
+    {field:$customemoji[assumir] | Aprovado por:<@$authorid> ($username - $authorid)}
+    {field:$customemoji[user] | Pago por:<getChannelVar[solicitou_ticket] ($username[$getChannelVar[solicitou_ticket]] - $getChannelVar[solicitou_ticket])}
+    {field:$customemoji[registros] | Chave PIX Utilizada:**\`$getChannelVar[chavepix]\`**}
+    {field:$customemoji[star] | Valor da Transação:**\`R\$ $getChannelVar[valorpix]\`**}
+    {field:$customemoji[clock] | Horário da Aprovação:<t:$truncate[$divide[$dateStamp;1000]]> (<t\:$truncate[$divide[$dateStamp;1000]]\:R>)}
+  }]
+  
   
   `
 }]
