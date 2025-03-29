@@ -10,9 +10,8 @@ module.exports = {
   $setGuildVar[qavaliacoes;$sum[$getGuildVar[qavaliacoes;$getGlobalUserVar[guildid]];1];$getGlobalUserVar[guildid]]
   $setGuildVar[tavaliacoes;$sum[$getGuildVar[tavaliacoes;$getGlobalUserVar[guildid]];$textinputvalue[estrelasaten_ticket]];$getGlobalUserVar[guildid]]
   $setGlobalUserVar[avaliacoes;$sub[$getGlobalUserVar[avaliacoes];1]]
-  $interactionfollowUp[**$customemoji[ok] | <@$authorid>, a sua Avaliação foi enviada com \`Sucesso\`. Agradecemos pela preferência!**]
-  $interactionDelete
-  $onlyif[$textinputvalue[estrelasaten_ticket]<=5;$interactionedit[**$customemoji[alerta] | Você só pode inserir um número entre \`1 e 5 Estrelas\`.**]]
-  $onlyif[$getGlobalUserVar[avaliacoes]>0;$interactionReply[**$customemoji[alerta] | Voce já enviou sua Avaliação para este \`Atendimento\`.**;;true]]
+  $editmessage[$messageid;**$customemoji[ok] | <@$authorid>, a sua Avaliação foi enviada com \`Sucesso\`. Agradecemos pela preferência!** {actionRow: {button:Deixar Avaliação:primary:avaliaratendimento_ticket:true:$customEmoji[star]}}]
+  $onlyif[$textinputvalue[estrelasaten_ticket]<=5;$editmessage[$messageid;**$customemoji[alerta] | Você só pode inserir um número entre \`1 e 5 Estrelas\`.** {actionRow: {button:Deixar Avaliação:primary:avaliaratendimento_ticket::$customEmoji[star]}}]]
+  $onlyif[$getGlobalUserVar[avaliacoes]>0;editmessage[$messageid;**$customemoji[alerta] | Voce já enviou sua Avaliação para este \`Atendimento\`!** {actionRow: {button:Deixar Avaliação:primary:avaliaratendimento_ticket:true:$customEmoji[star]}}]]
   `
 }

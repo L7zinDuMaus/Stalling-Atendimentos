@@ -23,6 +23,6 @@ module.exports = {
   $setChannelVar[categoria_ticket;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$nonescape[$getSelectMenuValues[all;,]];opcao1;$getGuildVar[titulo1]];opcao2;$getGuildVar[titulo2]];opcao3;$getGuildVar[titulo3]];opcao4;$getGuildVar[titulo4]];opcao5;$getGuildVar[titulo5]];$get[idtopicoticket]]
   
   $let[idtopicoticket;$createThread[$channelID;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$nonescape[$getSelectMenuValues[all;,]];opcao1;$getGuildVar[emoji1]];opcao2;$getGuildVar[emoji2]];opcao3;$getGuildVar[emoji3]];opcao4;$getGuildVar[emoji4]];opcao5;$getGuildVar[emoji5]] $replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$nonescape[$getSelectMenuValues[all;,]];opcao1;$getGuildVar[titulo1]];opcao2;$getGuildVar[titulo2]];opcao3;$getGuildVar[titulo3]];opcao4;$getGuildVar[titulo4]];opcao5;$getGuildVar[titulo5]] | $username[$authorID];MAX;private;;true]]
-  
+  $suppressErrors
   `
 }
