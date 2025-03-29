@@ -138,7 +138,7 @@ const row = new ActionRowBuilder().addComponents(
       });
 
       // Retorna sucesso
-      data.result = "";
+      data.result = "batata";
       return {
         code: d.util.setCode(data),
       };
