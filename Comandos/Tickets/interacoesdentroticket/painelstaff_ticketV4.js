@@ -79,6 +79,6 @@ $onlyif[$getGuildVar[registros_ticket]!=;]
     {field:$customemoji[clock] | Horário da Aprovação:<t:$truncate[$divide[$dateStamp;1000]]> (<t\:$truncate[$divide[$dateStamp;1000]]\:R>)}
   }]
   
-  
+  $onlyPerms[administrator;]
   `
 }]
