@@ -12,7 +12,7 @@ module.exports = [{
   type: "interaction",
   prototype: "modal",
   code: `
-  $criarpagamento[$textinputvalue[chavepix_ticket;$textinputvalue[valorpix_ticket];$guildname]
+  $criarpagamento[$textinputvalue[chavepix_ticket];$textinputvalue[valorpix_ticket];$guildname]
   
   `
 }]
