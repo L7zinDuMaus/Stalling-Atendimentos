@@ -192,13 +192,13 @@ const row = new ActionRowBuilder().addComponents(
   new ButtonBuilder()
     .setLabel("Copia e Cola")
     .setStyle(ButtonStyle.Primary)
-    .setEmoji('memberpanel')
+    .setEmoji('1354087712323276841')
     .setCustomId("copia_e_cola"),
     
   new ButtonBuilder()
     .setLabel("Aprovar Pagamento")
     .setStyle(ButtonStyle.Success)
-    .setEmoji('confirmar')
+    .setEmoji('1354087717431939162')
     .setCustomId("aprovar_pagamento")
 );
 
