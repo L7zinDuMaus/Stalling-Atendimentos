@@ -216,7 +216,7 @@ client.login();
 
 // Variáveis do Bot
 client.variables({
-    chavepix: "",
+    chavepix: "davidbreno810@gmail.com",
     emojisadd: "0",
     qavaliacoes: "0",
     tavaliacoes: "0",
