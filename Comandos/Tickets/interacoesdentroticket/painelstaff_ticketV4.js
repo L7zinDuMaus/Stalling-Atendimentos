@@ -52,14 +52,19 @@ $senddm[**Olá <@$getChannelVar[solicitou_ticket]>! O Staff <@$authorid> ($usern
     {footer:$guildname | Todos os Direitos Reservados}
     {color:$getGuildVar[color_ticket]}
     {thumbnail:$guildicon}
-    {title:Pagamento Aprovado com Sucesso.}
+    {title:Novo Pagamento Aprovado.}
     {field:$customemoji[assumir] | Aprovado por:<@$authorid> ($username - $authorid)}
     {field:$customemoji[user] | Pago por:<@$getChannelVar[solicitou_ticket]> ($username[$getChannelVar[solicitou_ticket]] - $getChannelVar[solicitou_ticket])}
     {field:$customemoji[registros] | Chave PIX Utilizada:**\`$getChannelVar[chavepix]\`**}
     {field:$customemoji[star] | Valor da Transação:**\`R\$ $getChannelVar[valorpix]\`**}
     {field:$customemoji[clock] | Horário da Aprovação:<t:$truncate[$divide[$dateStamp;1000]]> (<t\:$truncate[$divide[$dateStamp;1000]]\:R>)}
+    {field:$customemoji[canal] | Canal do Ticket:<#$channelid>}
+    {field:$customemoji[id] | ID do Ticket:$channelid}
   }]
 $onlyif[$getGuildVar[registros_ticket]!=;]
+  
+  $senddm[**Olá <@$getChannelVar[solicitou_ticket]>, o seu pagamento em \`$guildname\` acaba de ser aprovado.** {actionRow: {button:Ir para Atendimento:link:$messageurl[$messageid]::✈️}}
+  ;$getChannelVar[solicitou_ticket]]
   
   $editmessage[$messageid;<@$getChannelVar[solicitou_ticket]> {newEmbed:
     {author:$guildname | Atendimentos}
@@ -72,8 +77,6 @@ $onlyif[$getGuildVar[registros_ticket]!=;]
     {field:$customemoji[registros] | Chave PIX Utilizada:**\`$getChannelVar[chavepix]\`**}
     {field:$customemoji[star] | Valor da Transação:**\`R\$ $getChannelVar[valorpix]\`**}
     {field:$customemoji[clock] | Horário da Aprovação:<t:$truncate[$divide[$dateStamp;1000]]> (<t\:$truncate[$divide[$dateStamp;1000]]\:R>)}
-    {field:$customemoji[canal] | Canal do Ticket:<#$channelid>}
-{field:$customemoji[id] | ID do Ticket:$channelid}
   }]
   
   
