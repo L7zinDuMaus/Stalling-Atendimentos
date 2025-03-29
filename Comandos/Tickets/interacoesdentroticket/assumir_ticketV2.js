@@ -6,6 +6,7 @@ module.exports = {
   $interactionreply[⚠️** | Apenas membros da \`STAFF\` podem Assumir Tickets de Atendimento.**;;true]
 
 $onlyif[$authorid==$getChannelVar[solicitou_ticket];]
+$suppressErrors
 `}
 
 

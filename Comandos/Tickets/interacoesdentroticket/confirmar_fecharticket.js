@@ -24,6 +24,6 @@ module.exports = {
   $let[tempoentreatendimento;$sub[$getChannelVar[fechamento_ticket];$getChannelVar[abertura_ticket]]]
   $setChannelVar[fechamento_ticket;$truncate[$divide[$dateStamp;1000]]]
   $interactionreply[**$customemoji[alerta] | Este Ticket será Fechado em <t:$truncate[$sum[$divide[$dateStamp;1000];11]]:R>.**]
-
+$suppressErrors
     `
 }

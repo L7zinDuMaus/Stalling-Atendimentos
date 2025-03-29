@@ -21,5 +21,6 @@ $onlyif[$getGuildVar[registros_ticket]!=;]
   $setChannelVar[cooldown_painelmembroticket;$floor[$sum[$divide[$dateStamp;1000];3600]]]
   $advanceCooldown[1h;$authorid;$interactionedit[⚠️** | Você só poderá notificar um Staff novamente <t:$getChannelVar[cooldown_painelmembroticket]:R>.** {actionRow: {button:Notificar Atendente:primary:notificarstaff_ticket:true:📨}}]]
   $onlyif[$isbot[$getChannelVar[assumido_ticket]]==false;$interactionupdate[✖️ **| Nenhum Staff reivindicou seu Ticket de Atendimento ainda, aguarde um pouco!**]]
+  $suppressErrors
   `
 }

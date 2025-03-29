@@ -6,5 +6,6 @@ module.exports = {
   $interactionReply[**⚠️ | Apenas Atendentes de Tickets podem utilizar o Painel Staff.**;;true]
 
   $onlyif[$authorid==$getChannelVar[solicitou_ticket];]
+  $suppressErrors
   `
 }

@@ -22,6 +22,6 @@ $senddm[**Olá, <@$getChannelVar[solicitou_ticket]>! O \`STAFF\` <@$authorid> ($
   {button:Painel Staff:secondary:painelstaffticket::📒}};true]
  $setChannelVar[assumido_ticket;$authorid]
  $onlyif[$authorid!=$getChannelVar[solicitou_ticket];]
-
+$suppressErrors
  `
 }

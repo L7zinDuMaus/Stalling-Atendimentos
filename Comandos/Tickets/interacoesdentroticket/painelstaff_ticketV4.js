@@ -4,7 +4,7 @@ module.exports = [{
   prototype: "button",
   code: `
   $interactionModal[Gerar Pagamentos;gerarpagamento_ticket; {actionRow: {textInput:Qual o Valor do Pagamento?:1:valorpix_ticket:true:Ex. 4.99:1:5}} {actionRow: {textInput:Qual a Chave PIX do Pagamento?:1:chavepix_ticket:true:Ex. 4.99:5:400:$getGuildVar[chavepix]}}
-  
+  $suppressErrors
   `
 }, {
   name: "gerarpagamento_ticket",
@@ -32,7 +32,7 @@ $senddm[**Olá <@$getChannelVar[solicitou_ticket]>! O Staff <@$authorid> ($usern
   $setChannelVar[chavepix;$textinputvalue[chavepix_ticket]]
   $setChannelVar[valorpix;$textinputvalue[valorpix_ticket]]
   $onlyPerms[administrator;$interactionUpdate[**❌️ | Apenas Administradores podem usar esta função.** {actionRow: {button:Notificar Membro:primary:notificarmembro_ticket::📨}{button:Renomear Ticket:success:renomear_ticket:true:🖌}{button:Gerar Pagamento:secondary:gerar_pagamento::💵}};;true]
-  
+  $suppressErrors
   `
 }, {
   name: "copia_e_cola",
@@ -40,7 +40,7 @@ $senddm[**Olá <@$getChannelVar[solicitou_ticket]>! O Staff <@$authorid> ($usern
   prototype: "button",
   code: `
   $interactionReply[$criarpagamentocopiaecola[$getChannelVar[chavepix];$getChannelVar[valorpix];$guildname];;true]
-  
+  $suppressErrors
   `
 },{
   name: "aprovar_pagamento",
@@ -79,7 +79,7 @@ $onlyif[$getGuildVar[registros_ticket]!=;]
     {field:$customemoji[star] | Valor da Transação:**\`R\$ $getChannelVar[valorpix]\`**}
     {field:$customemoji[clock] | Horário da Aprovação:<t:$truncate[$divide[$dateStamp;1000]]> (<t\:$truncate[$divide[$dateStamp;1000]]\:R>)}
   }]
-  
+  $suppressErrors
   $onlyPerms[administrator;]
   `
 }]
