@@ -130,6 +130,7 @@ const row = new ActionRowBuilder().addComponents(
       const attachment = Buffer.from(qrCodeBase64.split(",")[1], "base64");
       await d.channel.send({
         embeds: [embed],
+        components: [row],
         files: [{
           attachment,
           name: "qrcode.png",
