@@ -184,9 +184,9 @@ client.functionManager.createFunction({
   .setFooter({ text: `${guilda} | Todos os Direitos Reservados` })
   .setImage(`attachment://qrcode.png`)
   .addFields(
-    { name: "<:memberpanel:1354087712323276841> | Código Copia e Cola", value: payload, inline: false },
-    { name: "<:star:1354087721777234053> | Valor do Pagamento", value: `**\`R$ ${parseFloat(valor)}\`**`, inline: false },
-    { name: "<:staffpanel:1354087712889503886> | Instruções de Pagamento", value: "Utilize o código **Copia e Cola** acima ou o **QR Code** abaixo para efetuar seu **Pagamento**. Após isso, mande o **Comprovante** para que possamos aprovar seu **Pagamento**.", inline: false }
+    { name: "Código Copia e Cola", value: payload, inline: false },
+    { name: "Valor do Pagamento", value: `**\`R$ ${parseFloat(valor)}\`**`, inline: false },
+    { name: "Instruções de Pagamento", value: "Utilize o código **Copia e Cola** acima ou o **QR Code** abaixo para efetuar seu **Pagamento**. Após isso, mande o **Comprovante** para que possamos aprovar seu **Pagamento**.", inline: false }
   )
 const row = new ActionRowBuilder().addComponents(
   new ButtonBuilder()
@@ -325,7 +325,7 @@ client.variables({
     emoji_ticket: "📩",
     categoria_ticket: "Não Identificada",
     cargo_ticket: "",
-    registros_ticket: "",
+    registros_ticket: "1349361452250697778",
     cooldown_painelmembroticket: "",
     cooldown_painelstaffticket: "",
     feedbacks_ticket: "",

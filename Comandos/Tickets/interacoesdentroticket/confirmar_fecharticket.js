@@ -18,7 +18,7 @@ module.exports = {
   
   $setGlobalUserVar[guildid;$guildid;$getChannelVar[solicitou_ticket]]
   $setGlobalUserVar[assumido_ticket;$replaceText[$getChannelVar[assumido_ticket];1340677420469981205;$clientid];$getChannelVar[solicitou_ticket]]
-  $setGlobalUserVar[avaliacoes;$sum[$getGlobalUserVar[avaliacoes;$getChannelVar[solicitou_ticket]];1];$getChannelVar[solicitou_ticket]]
+  $setGlobalUserVar[avaliacoes;1;$getChannelVar[solicitou_ticket]]
   $let[tempoatendimentosegundos;$floor[$divide[$sub[$get[tempoentreatendimento];$multi[$get[tempoatendimentodias];86400];$multi[$get[tempoatendimentohoras];3600];$multi[$get[tempoatendimentominutos];60]];1]]]
   $let[tempoatendimentominutos;$floor[$divide[$sub[$get[tempoentreatendimento];$multi[$get[tempoatendimentodias];86400];$multi[$get[tempoatendimentohoras];3600]];60]]]
   $let[tempoatendimentohoras;$floor[$divide[$sub[$get[tempoentreatendimento];$multi[$get[tempoatendimentodias];86400]];3600]]]

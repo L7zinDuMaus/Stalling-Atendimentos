@@ -6,4 +6,5 @@ module.exports = {
   $deletechannel[$channelid]
   $wait[11s]
   $onlyif[$getGuildVar[registros_ticket]==;]
+  $suppressErrors
   `}
