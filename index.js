@@ -325,7 +325,7 @@ client.variables({
     emoji_ticket: "📩",
     categoria_ticket: "Não Identificada",
     cargo_ticket: "",
-    registros_ticket: "1349361452250697778",
+    registros_ticket: "",
     cooldown_painelmembroticket: "",
     cooldown_painelstaffticket: "",
     feedbacks_ticket: "",
