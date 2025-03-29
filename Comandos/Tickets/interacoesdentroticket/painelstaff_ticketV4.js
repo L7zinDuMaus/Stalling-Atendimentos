@@ -15,17 +15,17 @@ module.exports = [{
 {title:Novo Pagamento Solicitado.}
 {field:$customemoji[user] | Quem foi Cobrado:<@$getChannelVar[solicitou_ticket]> ($username[$getChannelVar[solicitou_ticket]] - $getChannelVar[solicitou_ticket])}
 {field:$customemoji[assumir] | Quem Cobrou:<@$authorid> ($username - $authorid)}
-{field:$customEmoji[configurar] | Chave PIX:$getChannelVar[chavepix]}
+{field:$customEmoji[registros] | Chave PIX:$getChannelVar[chavepix]}
 {field:$customemoji[star] | Valor Cobrado:$getChannelVar[valorpix]}
 {field:$customemoji[registros] | Categoria:$getChannelVar[categoria_ticket] ($getChannelVar[emoji_ticket])}
 {field:$customemoji[canal] | Canal do Ticket:<#$channelid>}
 {field:$customemoji[id] | ID do Ticket:$channelid}
 }]
 $onlyif[$getGuildVar[registros_ticket]!=;]
-  $interactionedit[$criarpagamento[$textinputvalue[chavepix_ticket];$textinputvalue[valorpix_ticket];$guildname];;true]
+  $interactionedit[$criarpagamento[$textinputvalue[chavepix_ticket];$textinputvalue[valorpix_ticket];$guildname] {actionRow: {button:Notificar Membro:primary:notificarmembro_ticket::📨}{button:Renomear Ticket:success:renomear_ticket:true:🖌}{button:Gerar Pagamento:secondary:gerar_pagamento:true:💵}};;true]
   $setChannelVar[chavepix;$textinputvalue[chavepix_ticket]]
   $setChannelVar[valorpix;$textinputvalue[valorpix_ticket]]
-  $onlyPerms[administrator;$interactionReply[**❌️ | Apenas Administradores podem usar esta função.**;;true]
+  $onlyPerms[administrator;$interactionUpdate[**❌️ | Apenas Administradores podem usar esta função.** {actionRow: {button:Notificar Membro:primary:notificarmembro_ticket::📨}{button:Renomear Ticket:success:renomear_ticket:true:🖌}{button:Gerar Pagamento:secondary:gerar_pagamento::💵}};;true]
   
   `
 }, {

@@ -18,6 +18,6 @@ module.exports = {
 {actionRow: {button:Ir para Ticket de Atendimento:link:$messageurl[$sendmessage[**<@$authorid>, o Membro <@$getChannelVar[solicitou_ticket]> foi notificado com sucesso.**;true]]::🛩}};$getChannelVar[solicitou_ticket]]
   $interactionedit[☑️** | Membro Notificado com Sucesso.** {actionRow: {button:Notificar Membro:primary:notificarmembro_ticket:true:📨}{button:Renomear Ticket:success:renomear_ticket:true:🖌}}]
   $setChannelVar[cooldown_painelstaffticket;$floor[$sum[$divide[$dateStamp;1000];600]]]
-  $advanceCooldown[10m;$channelid;$interactionupdate[⚠️** | Você só poderá notificar o Membro novamente <t:$getChannelVar[cooldown_painelstaffticket]:R>.** {actionRow: {button:Notificar Membro:primary:notificarmembro_ticket:true:📨}{button:Renomear Ticket:success:renomear_ticket:true:🖌}}]]
+  $advanceCooldown[10m;$channelid;$interactionupdate[⚠️** | Você só poderá notificar o Membro novamente <t:$getChannelVar[cooldown_painelstaffticket]:R>.** {actionRow: {button:Notificar Membro:primary:notificarmembro_ticket::📨}{button:Renomear Ticket:success:renomear_ticket:true:🖌}{button:Gerar Pagamento:secondary:gerar_pagamento::💵}}]]
   `
 }
