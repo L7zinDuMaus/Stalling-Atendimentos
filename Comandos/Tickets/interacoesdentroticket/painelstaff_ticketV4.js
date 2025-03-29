@@ -15,7 +15,7 @@ module.exports = [{
 {title:Novo Pagamento Solicitado.}
 {field:$customemoji[user] | Quem foi Cobrado:<@$getChannelVar[solicitou_ticket]> ($username[$getChannelVar[solicitou_ticket]] - $getChannelVar[solicitou_ticket])}
 {field:$customemoji[assumir] | Quem Cobrou:<@$authorid> ($username - $authorid)}
-{field:$customEmoji[registros] | Chave PIX:**\`$getChannelVar[chavepix]\`**}
+{field:$customEmoji[registros] | Chave PIX Utilizada:**\`$getChannelVar[chavepix]\`**}
 {field:$customemoji[star] | Valor Cobrado:**\`R\$ $getChannelVar[valorpix]\`**}
 {field:$customemoji[clock] | Horário da Cobrança:<t:$truncate[$divide[$dateStamp;1000]]> (<t\:$truncate[$divide[$dateStamp;1000]]\:R>)}
 {field:$customemoji[registros] | Categoria:$getChannelVar[categoria_ticket] ($getChannelVar[emoji_ticket])}
@@ -58,6 +58,7 @@ $senddm[**Olá <@$getChannelVar[solicitou_ticket]>! O Staff <@$authorid> ($usern
     {field:$customemoji[registros] | Chave PIX Utilizada:**\`$getChannelVar[chavepix]\`**}
     {field:$customemoji[star] | Valor da Transação:**\`R\$ $getChannelVar[valorpix]\`**}
     {field:$customemoji[clock] | Horário da Aprovação:<t:$truncate[$divide[$dateStamp;1000]]> (<t\:$truncate[$divide[$dateStamp;1000]]\:R>)}
+    {field:$customemoji[registros] | Categoria:$getChannelVar[categoria_ticket] ($getChannelVar[emoji_ticket])}
     {field:$customemoji[canal] | Canal do Ticket:<#$channelid>}
     {field:$customemoji[id] | ID do Ticket:$channelid}
   }]
