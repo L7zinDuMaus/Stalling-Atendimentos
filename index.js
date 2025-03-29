@@ -138,7 +138,7 @@ const row = new ActionRowBuilder().addComponents(
       });
 
       // Retorna sucesso
-      data.result = "Código PIX gerado e enviado com sucesso!";
+      data.result = "";
       return {
         code: d.util.setCode(data),
       };
@@ -216,6 +216,7 @@ client.login();
 
 // Variáveis do Bot
 client.variables({
+    chavepix: "",
     emojisadd: "0",
     qavaliacoes: "0",
     tavaliacoes: "0",
