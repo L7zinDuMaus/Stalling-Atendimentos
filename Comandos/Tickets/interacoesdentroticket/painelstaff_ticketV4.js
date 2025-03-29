@@ -22,7 +22,7 @@ module.exports = [{
 {field:$customemoji[id] | ID do Ticket:$channelid}
 }]
 $onlyif[$getGuildVar[registros_ticket]!=;]
-  $interactionupdate[$criarpagamento[$textinputvalue[chavepix_ticket];$textinputvalue[valorpix_ticket];$guildname];;true]
+  $interactionedit[$criarpagamento[$textinputvalue[chavepix_ticket];$textinputvalue[valorpix_ticket];$guildname];;true]
   $setChannelVar[chavepix;$textinputvalue[chavepix_ticket]]
   $setChannelVar[valorpix;$textinputvalue[valorpix_ticket]]
   $onlyPerms[administrator;$interactionReply[**❌️ | Apenas Administradores podem usar esta função.**;;true]
