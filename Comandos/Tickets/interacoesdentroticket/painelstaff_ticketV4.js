@@ -13,6 +13,16 @@ module.exports = [{
   prototype: "modal",
   code: `
   $interactionreply[$criarpagamento[$textinputvalue[chavepix_ticket];$textinputvalue[valorpix_ticket];$guildname];;true]
+  $setChannelVar[chavepix;$textinputvalue[chavepix_ticket]]
+  $setChannelVar[valorpix;$textinputvalue[valorpix_ticket]]
+  
+  `
+}, {
+  name: "copia_e_cola",
+  type: "interaction",
+  prototype: "button",
+  code: `
+  $interactionReply[$criarpagamentocopiaecola[$getChannelVar[chavepix];$getChannelVar[valorpix];$guildname];;true]
   
   `
 }]
