@@ -21,7 +21,6 @@ module.exports = [{
 {field:$customemoji[canal] | Canal do Ticket:<#$channelid>}
 {field:$customemoji[id] | ID do Ticket:$channelid}
 }]
-
 $onlyif[$getGuildVar[registros_ticket]!=;]
   $interactionupdate[$criarpagamento[$textinputvalue[chavepix_ticket];$textinputvalue[valorpix_ticket];$guildname];;true]
   $setChannelVar[chavepix;$textinputvalue[chavepix_ticket]]
