@@ -10,7 +10,7 @@ module.exports = {
     {description:Personalize o seu Bot a partir dos Botões abaixo.}
   }{actionRow:
     {button:Config. Nome:primary:config_nome::✍️}
-    {button:Config. Avatar:primaryconfig_avatar::🌆}
+    {button:Config. Avatar:primary:config_avatar::🌆}
     {button:Config. Banner:primary:config_banner::🖼}
   }
   ]
