@@ -32,7 +32,7 @@ client.status({
     url: "https://www.twitch.tv/sabrina"
 });
 client.status({
-    name: "os Melhores Atendimentos!", // Normal status like any other Discord user without any state.
+    name: "as Melhores Aplicações!", // Normal status like any other Discord user without any state.
     time: 5,
     type: "COMPETING",
     status: 'idle',
