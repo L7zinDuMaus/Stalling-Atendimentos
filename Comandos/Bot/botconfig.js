@@ -11,7 +11,7 @@ module.exports = {
   }{actionRow:
     {button:Config. Nome:primary:config_nome::✍️}
     {button:Config. Avatar:primary:config_avatar::🌆}
-    {button:Config. Banner:primary:config_banner::🖼}
+    {button:Config. Banner:primary:config_banner::🖼} 
   }
   ]
   
