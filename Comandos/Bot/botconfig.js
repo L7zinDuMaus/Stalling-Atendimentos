@@ -9,9 +9,9 @@ module.exports = {
     {title:🎨 | Personalização do Bot Stalling Atendimentos}
     {description:Personalize o seu Bot a partir dos Botões abaixo.}
   }{actionRow:
-    {button:Config. Nome:config_nome:primary::✍️}
-    {button:Config. Avatar:config_avatar:primary::🌆}
-    {button:Config. Banner:config_banner:primary::🖼}
+    {button:Config. Nome:primary:config_nome::✍️}
+    {button:Config. Avatar:primaryconfig_avatar::🌆}
+    {button:Config. Banner:primary:config_banner::🖼}
   }
   ]
   
