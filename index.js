@@ -20,12 +20,14 @@ const client = new AoiClient({
 client.status({
     name: "by Stalling Apps.",
     type: "STREAMING",
+    status: 'idle',
     url: "https://www.twitch.tv/sabrina",
     time: 5
 });
 client.status({
     name: "Link na Bio!",
     type: "STREAMING",
+    status: 'idle',
     time: 5,
     url: "https://www.twitch.tv/sabrina"
 });
@@ -33,6 +35,7 @@ client.status({
     name: "os Melhores Atendimentos!", // Normal status like any other Discord user without any state.
     time: 5,
     type: "STREAMING",
+    status: 'idle',
     url: "https://www.twitch.tv/sabrina",
 });
 
