@@ -16,26 +16,6 @@ const client = new AoiClient({
     }
 });
 
-function adicionarFormulario(nome, pergunta1, pergunta2) { const caminhoArquivo = 'formularios.json'; let formularios = [];
-
-if (fs.existsSync(caminhoArquivo)) {
-    const conteudo = fs.readFileSync(caminhoArquivo, 'utf8');
-    formularios = conteudo ? JSON.parse(conteudo) : [];
-}
-
-const novoFormulario = {
-    id: formularios.length > 0 ? formularios[formularios.length - 1].id + 1 : 1,
-    nome,
-    pergunta1,
-    pergunta2
-};
-
-produtos.push(novoFormulario);
-fs.writeFileSync(caminhoArquivo, JSON.stringify(formularios, null, 2));
-console.log('Produto adicionado com sucesso!');
-
-}
-
 // Status do Bot
 client.status({
     name: "by Stalling Apps.",
