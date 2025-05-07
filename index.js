@@ -49,7 +49,7 @@ client.on("ready", async () => {
 
         await client.application.fetch(); // Atualiza os dados da aplicação
         await client.application.edit({
-            description: "made by **Stalling Apps**:\nhttps://discord.gg/BWs2qu5NCm"
+            description: "made by **Stalling BATATA Apps**:\nhttps://discord.gg/BWs2qu5NCm"
         });
 
         console.log("Biografia Atualizada.");
