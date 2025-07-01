@@ -76,6 +76,6 @@ $createAppEmoji[escrita;https://images-ext-1.discordapp.net/external/jpV5mMzf-Ti
   
   $setVar[emojisadd;1]
   $suppressErrors
-  $onlyif[$authorid==1327683260133675118;]
+  $onlyif[$authorid==485501213270605824;]
   `
 }]
