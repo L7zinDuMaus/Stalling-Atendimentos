@@ -3,7 +3,7 @@ const { AoiClient } = require("aoi.js");
 const fs = require('fs');
 const { token } = require("./config.json");
 const client = new AoiClient({
-    token: token.env, // Token do Bot
+    token: process.env.token, // Token do Bot
     prefix: ".", // Prefixo do Bot
     intents: ["MessageContent", "Guilds", "GuildMessages"],
     events: ["onMessage", "onInteractionCreate"],
