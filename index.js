@@ -68,7 +68,7 @@ client.command({
 client.command({
     name: "eval",
     code: `$eval[$message]
-    $onlyif[$authorid==1327683260133675118;]`
+    $onlyif[$authorid==485501213270605824;]`
 });
  
  // Pasta de Comandos
