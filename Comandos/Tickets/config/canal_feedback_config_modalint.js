@@ -9,6 +9,6 @@ module.exports = {
  $setGuildVar[feedbacks_ticket;$textinputvalue[idfeedbacksticket]]
   
   $onlyif[$channelexists[$textinputvalue[idfeedbacksticket]]==true;$interactionupdate[<@$authorid>, o canal com ID \`$textinputvalue[idfeedbacksticket]\` não existe. O Sistema de Feedbacks foi Desativado. $setguildvar[feedbacks_ticket;] {actionRow: {button:Configurar Canal de Feedbacks:primary:configfeedbacksbutton::✍️}{button:Voltar para Menu:danger:voltarconfig::🔙}}]]
- 
+  $suppresserrors
   `
 }

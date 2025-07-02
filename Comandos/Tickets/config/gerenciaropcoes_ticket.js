@@ -18,6 +18,6 @@ module.exports = {
   {field:5. $getGuildVar[emoji5] | $getGuildVar[titulo5]:$getGuildVar[desc5]}
  $endif }
   {actionRow:{button:Adicionar Opção:success:addopcao_ticket:$if[$getGuildVar[titulo5]==$getvar[titulo5]]true$endif:}{button:Remover Opção:danger:remopcao_ticket::}{button:Voltar para Menu:secondary:voltarconfig::🔙}}]
-  
+   $suppresserrors
   `
 }

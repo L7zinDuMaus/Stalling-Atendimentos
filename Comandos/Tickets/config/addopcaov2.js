@@ -55,5 +55,6 @@ module.exports = {
   $let[titulo;$textinputvalue[tituloopticket]]
   $let[desc;$textinputvalue[descricaoopticket]]
   $let[emoji;$textinputvalue[emojiopticket]]
+   $suppresserrors
   `
 }

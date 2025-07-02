@@ -14,6 +14,6 @@ module.exports = {
   {thumbnail:$guildicon}
   {footer:$guildname | Todos os Direitos Reservados}
   {description:Abaixo estão todas as minhas variáveis!}};;true]
-  
+   $suppresserrors
   `
 }

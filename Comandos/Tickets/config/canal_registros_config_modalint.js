@@ -8,6 +8,7 @@ module.exports = {
   $setGuildVar[registros_ticket;$textinputvalue[idregistrosticket]]
   
   $onlyif[$channelexists[$textinputvalue[idregistrosticket]]==true;$interactionupdate[<@$authorid>, o canal com ID \`$textinputvalue[idregistrosticket]\` não existe. O Sistema de Registros foi Desativado.{actionRow: {button:Configurar Canal de Registros:primary:configregistrosbutton::✍️}{button:Voltar para Menu:danger:voltarconfig::🔙}}] $setGuildVar[registros_ticket;]]
+   $suppresserrors
  
   `
 }

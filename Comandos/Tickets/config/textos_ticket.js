@@ -15,5 +15,6 @@ module.exports = {
   }{actionRow:
     {textInput:Qual Banner Deseja Utilizar?:2:bannerpainel:true:Escreva RESETAR para deixar padrão.:5:400:$getGuildVar[banner_ticket]}
   }]
+     $suppresserrors
   `
 }

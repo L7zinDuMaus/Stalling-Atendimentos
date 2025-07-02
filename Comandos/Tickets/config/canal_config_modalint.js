@@ -8,6 +8,7 @@ module.exports = {
   $setGuildVar[canal_ticket;$textinputvalue[idcanalticket]]
   
   $onlyif[$channelexists[$textinputvalue[idcanalticket]]==true;$interactionupdate[<@$authorid>, o canal com ID \`$textinputvalue[idcanalticket]\` não existe.{actionRow: {button:Configurar Canal:primary:configcanalbutton::✍️}{button:Voltar para Menu:danger:voltarconfig::🔙}}]]
+   $suppresserrors
  
   `
 }
